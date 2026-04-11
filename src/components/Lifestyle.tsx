@@ -1,17 +1,15 @@
 import { motion } from "framer-motion";
 import lifestyleImg from "@/assets/lifestyle.jpg";
+import ParallaxBackground from "./ParallaxBackground";
 
 const Lifestyle = () => {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 min-h-[600px]">
-      <div className="overflow-hidden relative group">
-        <img
+    <section className="grid grid-cols-1 md:grid-cols-2 min-h-[600px] overflow-hidden">
+      <div className="overflow-hidden relative group h-[400px] md:h-full">
+        <ParallaxBackground
           src={lifestyleImg}
           alt="Natural spring water source"
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          loading="lazy"
-          width={960}
-          height={960}
+          intensity={80}
         />
       </div>
       <motion.div

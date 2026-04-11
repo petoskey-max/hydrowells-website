@@ -38,7 +38,7 @@ const Footer = () => {
 
       <div className="border-t border-white/10 pt-8 flex justify-between items-center">
         <p className="text-[13px] text-white/25">
-          © 2026 HYDROWELLS® — All rights reserved.
+          © 2026 HYDROWELLS® All rights reserved.
         </p>
         <p className="text-white/25 text-[13px]">Nigeria's Premium Water</p>
       </div>

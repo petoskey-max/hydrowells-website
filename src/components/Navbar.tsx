@@ -4,31 +4,52 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [navState, setNavState] = useState<"top" | "hidden" | "sticky">("top");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const y = window.scrollY;
+      const bottleSection = document.getElementById("the-bottle");
+      let threshold = window.innerHeight * 3; // fallback
+      
+      if (bottleSection) {
+        // Calculate the exact bottom pixel of 'The Bottle' section in the document
+        threshold = bottleSection.getBoundingClientRect().bottom + y - 80;
+      }
+
+      if (y < 50) {
+        setNavState("top");
+      } else if (y >= 50 && y < threshold) {
+        setNavState("hidden");
+      } else {
+        setNavState("sticky");
+      }
+    };
+    
+    // Initial check
+    handleScroll();
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const links = [
-    { href: "#about", label: "About" },
-    { href: "#products", label: "Products" },
-    { href: "#process", label: "Process", subLinks: [{ href: "#recycling", label: "Recycling Journey" }] },
-    { href: "#reviews", label: "Reviews" },
-    { href: "#events", label: "Events" },
-    { href: "#contact", label: "Contact" },
+    { href: "#about", label: "our story" },
+    { href: "#products", label: "products" },
+    { href: "#process", label: "process", subLinks: [{ href: "#recycling", label: "recycling journey" }] },
+    { href: "#reviews", label: "reviews" },
+    { href: "#events", label: "events" },
+    { href: "#contact", label: "contact" },
   ];
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      initial={{ y: 0 }}
+      animate={{ y: navState === "hidden" ? -100 : 0 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      className={`fixed top-0 left-0 right-0 z-[60] transition-colors duration-300 ${
+        navState === "sticky"
           ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
@@ -38,7 +59,7 @@ const Navbar = () => {
           <img src={logo} alt="Hydrowells" className="h-[50px] w-auto object-contain" />
         </a>
 
-        {/* Desktop nav - centered links */}
+        {/* Desktop nav centered links */}
         <ul className="hidden lg:flex items-center gap-8 list-none absolute left-1/2 -translate-x-1/2">
           {links.map((link) => (
             <li key={link.href} className="relative group">
@@ -67,12 +88,12 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Order Now button - right aligned */}
+        {/* Order Now button right aligned */}
         <a
           href="#shop"
           className="hidden lg:inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap"
         >
-          Order Now
+          order now
         </a>
 
         {/* Tablet/Mobile hamburger */}
@@ -110,7 +131,7 @@ const Navbar = () => {
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors w-full text-center"
               >
-                Order Now
+                order now
               </a>
             </li>
           </ul>

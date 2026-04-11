@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import TheBottle from "@/components/TheBottle";
+import ScrollBottleWrapper from "@/components/ScrollBottleWrapper";
 import BrandStrip from "@/components/BrandStrip";
 import Values from "@/components/Values";
 import WeekendLifestyle from "@/components/WeekendLifestyle";
@@ -19,11 +21,14 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div>
       <Navbar />
-      <Hero />
-      <BrandStrip />
-      <Values />
+      <ScrollBottleWrapper>
+        <Hero hideBottle />
+        <BrandStrip />
+        <Values />
+        <TheBottle hideBottle />
+      </ScrollBottleWrapper>
       <WeekendLifestyle />
       <Products />
       <Lifestyle />

@@ -4,8 +4,8 @@ const values = [
   { icon: "💧", title: "Pure Source", desc: "Sourced from deep aquifers, naturally protected from surface contaminants." },
   { icon: "⚡", title: "3x Filtered", desc: "Triple-stage reverse osmosis for the cleanest water you can drink." },
   { icon: "🧊", title: "Mineral Rich", desc: "Enhanced with essential minerals for the perfect taste and health balance." },
-  { icon: "♻️", title: "Eco-Friendly", desc: "100% recyclable bottles and carbon-neutral production process." },
-  { icon: "🚚", title: "Fast Delivery", desc: "Delivered fresh to your doorstep — Lagos, Abuja and nationwide." },
+  { icon: "♻️", title: "Eco Friendly", desc: "100% recyclable bottles and carbon neutral production process." },
+  { icon: "🚚", title: "Fast Delivery", desc: "Delivered fresh to your doorstep Lagos, Abuja and nationwide." },
 ];
 
 const containerVariants = {
@@ -16,18 +16,20 @@ const containerVariants = {
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  hidden: { opacity: 0, y: 40, rotateX: 25, z: -100, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
+    rotateX: 0,
+    z: 0,
     scale: 1,
-    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
   },
 };
 
 const Values = () => {
   return (
-    <section className="py-24 px-6 md:px-[60px] bg-gradient-to-br from-[#000000] to-[#005bed] text-white" id="about">
+    <section className="py-24 px-6 md:px-[60px] bg-gradient-to-br from-[#000000] to-[#005bed] text-white [perspective:2000px]" id="about">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +63,7 @@ const Values = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-[17px] text-white/70 leading-relaxed max-w-[520px]"
         >
-          every bottle is a promise — clean, pure and responsibly made. we go beyond industry standards so you can drink with confidence.
+          every bottle is a promise clean, pure and responsibly made. we go beyond industry standards so you can drink with confidence.
         </motion.p>
       </motion.div>
 

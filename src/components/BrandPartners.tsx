@@ -45,7 +45,7 @@ const BrandPartners = () => {
             movement.
           </h2>
           <p className="text-[17px] text-muted-foreground leading-relaxed max-w-[480px] mb-12">
-            hydrowells isn't just a water brand — it's a lifestyle. we collaborate with partners who share our vision of purity, quality and sustainability.
+            hydrowells isn't just a water brand it's a lifestyle. we collaborate with partners who share our vision of purity, quality and sustainability.
           </p>
 
           {/* Partner logos */}

@@ -1,19 +1,16 @@
 import { motion } from "framer-motion";
 import heroBottle from "@/assets/hero-bottle.png";
+import { FadeInScope } from "./FadeInScope";
 
-const Hero = () => {
+const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
   return (
-    <section className="min-h-screen bg-background relative overflow-hidden grid grid-cols-1 md:grid-cols-2 items-center px-6 md:px-[60px] pt-28 pb-20 gap-10">
+    <section id="hero" className="min-h-screen bg-background relative overflow-hidden flex items-center pt-28 pb-20">
       {/* Decorative circles */}
       <div className="absolute -right-[150px] -top-[150px] w-[700px] h-[700px] rounded-full bg-primary/[0.04] pointer-events-none" />
-      <div className="absolute -left-[100px] -bottom-[100px] w-[500px] h-[500px] rounded-full bg-primary/[0.04] pointer-events-none" />
+      <div className="absolute -left-[100px] -bottom-[100px] w-[500px] h-[500px] rounded-full bg-primary/[0.04] pointer-events-none z-0" />
 
-      <motion.div
-        initial={{ opacity: 0, x: -60 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="z-10"
-      >
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6 md:px-[60px] w-full z-10 relative">
+        <FadeInScope delay={0.2} className="z-10">
         <p className="text-xs font-semibold text-muted-foreground tracking-[2px] lowercase mb-6">
           premium hydration
         </p>
@@ -24,7 +21,7 @@ const Hero = () => {
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-[460px]">
           hydrowells delivers ultra-pure, mineral-balanced water
-          through cutting-edge filtration — bottled at the source, crafted for
+          through cutting edge filtration bottled at the source, crafted for
           those who demand more from every drop.
         </p>
         <div className="flex gap-4 flex-wrap">
@@ -41,24 +38,27 @@ const Hero = () => {
             Our Story
           </a>
         </div>
-      </motion.div>
+      </FadeInScope>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.85 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 60 }}
-        className="z-10 flex justify-center items-end"
-      >
-        <motion.img
-          src={heroBottle}
-          alt="Hydrowells premium water bottle"
-          className="w-full max-w-[380px] h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,91,237,0.18)]"
-          width={512}
-          height={768}
-          animate={{ y: [0, -16, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </motion.div>
+        {!hideBottle && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 60 }}
+            className="z-10 flex justify-center items-end"
+          >
+            <motion.img
+              src={heroBottle}
+              alt="Hydrowells premium water bottle"
+              className="w-full max-w-[380px] h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,91,237,0.18)]"
+              width={512}
+              height={768}
+              animate={{ y: [0, -16, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </motion.div>
+        )}
+      </div>
     </section>
   );
 };

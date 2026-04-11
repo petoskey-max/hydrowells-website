@@ -30,7 +30,7 @@ const PreciousMoments = () => {
               </defs>
               <text className="fill-primary/30 text-[22px] font-extrabold tracking-[12px] lowercase">
                 <textPath href="#textCircle" startOffset="0%">
-                  hydrowells • hydrowells • hydrowells • hydrowells •
+                  hydrowells • hydrowells • hydrowells • 
                 </textPath>
               </text>
             </svg>

@@ -5,6 +5,12 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 220 20% 10%;

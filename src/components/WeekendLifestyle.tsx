@@ -11,12 +11,12 @@ import img5 from "@/assets/weekend-5-ready.jpg";
 import img6 from "@/assets/weekend-6-slay.jpg";
 
 const slides = [
-  { img: img1, title: "starting your weekend.", step: "01", desc: "It all begins here. A fresh start, a clean slate — and the perfect glass of water to set the tone." },
+  { img: img1, title: "starting your weekend.", step: "01", desc: "It all begins here. A fresh start, a clean slate and the perfect glass of water to set the tone." },
   { img: img2, title: "wake up.", step: "02", desc: "Rise with intention. Hydrate first, everything else follows. Your body craves it." },
-  { img: img3, title: "go for a run.", step: "03", desc: "Push your limits. Every stride powered by pure hydration — clean water fuels clean energy." },
+  { img: img3, title: "go for a run.", step: "03", desc: "Push your limits. Every stride powered by pure hydration clean water fuels clean energy." },
   { img: img4, title: "pray. meditate. journal.", step: "04", desc: "Still your mind. Nourish your soul. A moment of clarity deserves the purest water." },
   { img: img5, title: "get ready.", step: "05", desc: "Your best self starts from within. Hydrate, glow, and step into the world with confidence." },
-  { img: img6, title: "slay.", step: "06", desc: "You've earned this moment. Hydrowells — with you from sunrise to spotlight." },
+  { img: img6, title: "slay.", step: "06", desc: "You've earned this moment. Hydrowells with you from sunrise to spotlight." },
 ];
 
 const WeekendLifestyle = () => {
@@ -95,7 +95,7 @@ const WeekendLifestyle = () => {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="text-[16px] text-muted-foreground leading-relaxed max-w-[520px] mt-4"
         >
-          hydrowells is more than water — it's the thread that ties every moment of your perfect weekend together.
+          hydrowells is more than water it's the thread that ties every moment of your perfect weekend together.
         </motion.p>
       </motion.div>
 

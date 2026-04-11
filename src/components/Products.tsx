@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
 import heroBottle from "@/assets/hero-bottle.png";
+import { FadeInScope } from "./FadeInScope";
 
 const products = [
   {
     name: "Hydrowells 750ml",
-    desc: "Our flagship bottle — crisp, clean and perfectly balanced for everyday hydration. The go-to choice for homes, offices and events.",
+    desc: "Our flagship bottle crisp, clean and perfectly balanced for everyday hydration. The go to choice for homes, offices and events.",
     tag: "Best Seller",
     volume: "750ml",
   },
   {
     name: "Hydrowells 500ml",
-    desc: "The perfect on-the-go companion. Fits in your bag, your car, your gym kit — pure hydration wherever life takes you.",
+    desc: "The perfect on the go companion. Fits in your bag, your car, your gym kit pure hydration wherever life takes you.",
     tag: "Popular",
     volume: "500ml",
   },
@@ -26,11 +27,7 @@ const Products = () => {
   return (
     <section className="py-24 px-6 md:px-[60px] bg-secondary" id="products">
       <div className="mb-14">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <FadeInScope>
           <p className="text-xs font-semibold text-primary tracking-[2px] lowercase mb-4">
             our products
           </p>
@@ -42,18 +39,17 @@ const Products = () => {
           <p className="text-[17px] text-muted-foreground leading-relaxed max-w-[520px] mt-5">
             from workout sessions to family dinners, hydrowells has a bottle for every occasion.
           </p>
-        </motion.div>
+        </FadeInScope>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 [perspective:1500px]">
         {products.map((p, i) => (
-          <motion.div
+          <FadeInScope
             key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.15 }}
+            delay={i * 0.15}
             className="bg-card rounded-[28px] overflow-hidden border border-border hover:-translate-y-2.5 hover:shadow-2xl transition-all duration-300 group"
+            initial={{ rotateX: 25, z: -100, opacity: 0 }}
+            whileInView={{ rotateX: 0, z: 0, opacity: 1 }}
           >
             <div className="h-[340px] flex items-center justify-center overflow-hidden relative bg-gradient-to-br from-primary/5 to-primary/10">
               <img
@@ -77,7 +73,7 @@ const Products = () => {
                 {p.tag}
               </span>
             </div>
-          </motion.div>
+          </FadeInScope>
         ))}
       </div>
     </section>

@@ -5,7 +5,7 @@ const events = [
   {
     title: "Lagos Water Festival",
     date: "July 2026",
-    desc: "Join us at Nigeria's largest hydration and wellness festival — tastings, panels and more.",
+    desc: "Join us at Nigeria's largest hydration and wellness festival tastings, panels and more.",
     icon: <Sparkles className="w-6 h-6" />,
     tag: "Upcoming",
   },
@@ -19,7 +19,7 @@ const events = [
   {
     title: "Hydrowells Run Club",
     date: "Every Saturday",
-    desc: "Weekly community runs across Lagos — free hydrowells bottles for every finisher.",
+    desc: "Weekly community runs across Lagos free hydrowells bottles for every finisher.",
     icon: <Calendar className="w-6 h-6" />,
     tag: "Recurring",
   },
@@ -50,7 +50,7 @@ const Events = () => {
           show up.
         </h2>
         <p className="text-[17px] text-muted-foreground leading-relaxed max-w-[520px] mt-5">
-          hydrowells is more than a bottle — it's a movement. catch us at events, pop-ups and experiences across nigeria.
+          hydrowells is more than a bottle it's a movement. catch us at events, pop ups and experiences across nigeria.
         </p>
       </motion.div>
 

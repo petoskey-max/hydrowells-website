@@ -11,7 +11,7 @@ const merch = [
   {
     name: "Hydrowells Tote",
     price: "₦4,000",
-    desc: "Eco-friendly canvas tote — carry your bottles in style.",
+    desc: "Eco friendly canvas tote carry your bottles in style.",
     emoji: "👜",
   },
   {
@@ -23,7 +23,7 @@ const merch = [
   {
     name: "Hydrowells Tumbler",
     price: "₦12,000",
-    desc: "Insulated stainless steel tumbler — keeps water cold for 24hrs.",
+    desc: "Insulated stainless steel tumbler keeps water cold for 24hrs.",
     emoji: "🥤",
   },
 ];

@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
 import campaignImg from "@/assets/campaign.jpg";
+import ParallaxBackground from "./ParallaxBackground";
 
 const Campaign = () => {
   return (
     <section className="relative min-h-[520px] flex items-center overflow-hidden bg-gradient-to-br from-[#000000] to-[#005bed]">
       <div className="absolute inset-0 z-0">
-        <img
+        <ParallaxBackground
           src={campaignImg}
           alt="Water filtration facility"
-          className="w-full h-full object-cover opacity-20 mix-blend-overlay"
-          loading="lazy"
-          width={1920}
-          height={768}
+          intensity={100}
         />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-primary/40 mix-blend-multiply" />
       </div>
       <motion.div
         initial={{ opacity: 0, y: 40 }}

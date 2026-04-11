@@ -1,0 +1,57 @@
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import heroBottle from "@/assets/hero-bottle.png";
+
+export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Track scroll over the entire container (Hero + TheBottle)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  // Calculate 3D-like float transforms
+  // As it scrolls between sections, it pops out, rotates, and stabilizes
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.15, 1.25, 1.15]);
+  // Subtle 3D flips
+  const rotateZ = useTransform(scrollYProgress, [0, 0.5, 1], [0, 12, 0]);
+  const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], [0, 30, 0]);
+  const yFloat = useTransform(scrollYProgress, [0, 0.5, 1], [90, -100, -20]);
+
+  return (
+    <div ref={containerRef} className="relative">
+      <div className="absolute inset-0 pointer-events-none z-50">
+        <div className="sticky top-0 h-screen w-full flex items-center px-6 md:px-[60px]">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-full h-full">
+            <div className="hidden md:block"></div>
+            <div className="flex justify-center md:justify-end items-end md:items-center relative">
+              <motion.div 
+                className="w-full max-w-[340px] md:max-w-[440px] flex justify-center origin-center"
+                style={{ 
+                  scale,
+                  rotateZ,
+                  rotateY,
+                  y: yFloat
+                }}
+              >
+                <motion.img 
+                  src={heroBottle}
+                  alt="Hydrowells Floating Bottle"
+                  className="w-full h-auto max-h-[65vh] md:max-h-[80vh] object-contain drop-shadow-[0_40px_80px_rgba(0,91,237,0.3)]"
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* The actual page sections (Hero and TheBottle) will render underneath */}
+      {children}
+    </div>
+  );
+};
+
+export default ScrollBottleWrapper;
