@@ -27,7 +27,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
   const yFloat = useTransform(scrollYProgress, [0, 0.5, 1], [35, -100, -20]);
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative overflow-x-hidden">
       <div className="absolute inset-0 pointer-events-none z-50">
         <div className="sticky top-0 h-screen w-full flex items-center px-6 md:px-[60px]">
           <div className="max-w-[1400px] mx-auto grid grid-cols-[1.5fr,1fr] md:grid-cols-2 gap-4 md:gap-10 items-center w-full h-full">
