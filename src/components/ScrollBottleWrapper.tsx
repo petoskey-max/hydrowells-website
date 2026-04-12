@@ -24,7 +24,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.3, 1.45, 1.3]);
   const rotateZ = useTransform(scrollYProgress, [0, 0.5, 1], [0, 12, 0]);
   const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], [0, 30, 0]);
-  const yFloat = useTransform(scrollYProgress, [0, 0.5, 1], [90, -100, -20]);
+  const yFloat = useTransform(scrollYProgress, [0, 0.5, 1], [35, -100, -20]);
 
   return (
     <div ref={containerRef} className="relative">
