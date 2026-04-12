@@ -28,35 +28,34 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
 
   return (
     <div ref={containerRef} className="relative">
-      <div className="absolute inset-0 pointer-events-none z-50">
-        <div className="sticky top-0 h-screen w-full flex items-center px-6 md:px-[60px]">
-          <div className="max-w-[1400px] mx-auto grid grid-cols-[1.5fr,1fr] md:grid-cols-2 gap-4 md:gap-10 items-center w-full h-full">
-            <div className="block"></div>
-            <div className="flex justify-center md:justify-end items-center relative">
-              <motion.div 
-                className="w-full max-w-[200px] md:max-w-[540px] flex justify-center origin-center"
-                style={{ 
-                  scale,
-                  rotateZ,
-                  rotateY,
-                  y: yFloat
-                }}
-              >
-                <motion.img 
-                  src={heroBottle}
-                  alt="Hydrowells Floating Bottle"
-                  className="w-full h-auto max-h-[92vh] md:max-h-[85vh] object-contain drop-shadow-[0_40px_80px_rgba(0,91,237,0.3)] will-change-transform"
-                  animate={{ y: [0, -20, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                />
-              </motion.div>
-            </div>
+      <div className="sticky top-0 h-screen w-full flex items-center px-6 md:px-[60px] pointer-events-none z-50">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-[1.5fr,1fr] md:grid-cols-2 gap-4 md:gap-10 items-center w-full h-full">
+          <div className="block"></div>
+          <div className="flex justify-center md:justify-end items-center relative">
+            <motion.div 
+              className="w-full max-w-[280px] md:max-w-[540px] flex justify-center origin-center"
+              style={{ 
+                scale,
+                rotateZ,
+                rotateY,
+                y: yFloat,
+                willChange: "transform",
+              }}
+            >
+              <motion.img 
+                src={heroBottle}
+                alt="Hydrowells Floating Bottle"
+                className="w-full h-auto max-h-[92vh] md:max-h-[85vh] object-contain drop-shadow-[0_40px_80px_rgba(0,91,237,0.3)] will-change-transform"
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </motion.div>
           </div>
         </div>
       </div>
-      
-      {/* The actual page sections (Hero and TheBottle) will render underneath */}
-      {children}
+      <div className="-mt-[100vh]">
+        {children}
+      </div>
     </div>
   );
 };
