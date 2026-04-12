@@ -4,21 +4,21 @@ import { FadeInScope } from "./FadeInScope";
 
 const products = [
   {
-    name: "Hydrowells 750ml",
-    desc: "Our flagship bottle crisp, clean and perfectly balanced for everyday hydration. The go to choice for homes, offices and events.",
-    tag: "Best Seller",
+    name: "hydrowells 750ml",
+    desc: "our flagship bottle crisp, clean and perfectly balanced for everyday hydration. the go to choice for homes, offices and events.",
+    tag: "best seller",
     volume: "750ml",
   },
   {
-    name: "Hydrowells 500ml",
-    desc: "The perfect on the go companion. Fits in your bag, your car, your gym kit pure hydration wherever life takes you.",
-    tag: "Popular",
+    name: "hydrowells 500ml",
+    desc: "the perfect on the go companion. fits in your bag, your car, your gym kit pure hydration wherever life takes you.",
+    tag: "popular",
     volume: "500ml",
   },
   {
-    name: "Hydrowells 350ml",
-    desc: "Compact and elegant. Perfect for meetings, events and intimate gatherings where every detail matters.",
-    tag: "Compact",
+    name: "hydrowells 350ml",
+    desc: "compact and elegant. perfect for meetings, events and intimate gatherings where every detail matters.",
+    tag: "compact",
     volume: "350ml",
   },
 ];
