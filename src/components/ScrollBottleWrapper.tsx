@@ -21,7 +21,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
 
   // Calculate 3D-like float transforms
   // As it scrolls between sections, it pops out, rotates, and stabilizes
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.15, 1.25, 1.15]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.3, 1.45, 1.3]);
   const rotateZ = useTransform(scrollYProgress, [0, 0.5, 1], [0, 12, 0]);
   const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], [0, 30, 0]);
   const yFloat = useTransform(scrollYProgress, [0, 0.5, 1], [90, -100, -20]);
@@ -34,7 +34,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
             <div className="hidden md:block"></div>
             <div className="flex justify-center md:justify-end items-end md:items-center relative">
               <motion.div 
-                className="w-full max-w-[340px] md:max-w-[440px] flex justify-center origin-center"
+                className="w-full max-w-[340px] md:max-w-[500px] flex justify-center origin-center"
                 style={{ 
                   scale,
                   rotateZ,
