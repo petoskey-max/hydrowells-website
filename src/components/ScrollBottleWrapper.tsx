@@ -34,7 +34,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
             <div className="block"></div>
             <div className="flex justify-center md:justify-end items-center relative">
               <motion.div 
-                className="w-full max-w-[220px] md:max-w-[540px] flex justify-center origin-center"
+                className="w-full max-w-[280px] md:max-w-[540px] flex justify-center origin-center"
                 style={{ 
                   scale,
                   rotateZ,
@@ -45,7 +45,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
                 <motion.img 
                   src={heroBottle}
                   alt="Hydrowells Floating Bottle"
-                  className="w-full h-auto max-h-[82vh] md:max-h-[85vh] object-contain drop-shadow-[0_40px_80px_rgba(0,91,237,0.3)] will-change-transform"
+                  className="w-full h-auto max-h-[88vh] md:max-h-[85vh] object-contain drop-shadow-[0_40px_80px_rgba(0,91,237,0.3)] will-change-transform"
                   animate={{ y: [0, -20, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 />
