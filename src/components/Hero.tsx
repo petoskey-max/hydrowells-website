@@ -9,7 +9,7 @@ const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
       <div className="absolute -right-[150px] -top-[150px] w-[700px] h-[700px] rounded-full bg-primary/[0.04] pointer-events-none" />
       <div className="absolute -left-[100px] -bottom-[100px] w-[500px] h-[500px] rounded-full bg-primary/[0.04] pointer-events-none z-0" />
 
-      <div className="max-w-[1400px] mx-auto grid grid-cols-[1fr,1.3fr] md:grid-cols-2 gap-6 md:gap-10 items-center px-6 md:px-[60px] w-full z-10 relative">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-[1.4fr,1fr] md:grid-cols-2 gap-4 md:gap-10 items-center px-6 md:px-[60px] w-full z-10 relative">
         <FadeInScope delay={0.2} className="z-10">
         <p className="text-xs font-semibold text-muted-foreground tracking-[2px] lowercase mb-6">
           premium hydration
@@ -24,7 +24,7 @@ const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
           through cutting edge filtration bottled at the source, crafted for
           those who demand more from every drop.
         </p>
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="#products"
             className="bg-primary text-primary-foreground px-9 py-4 rounded-full text-[15px] font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all"

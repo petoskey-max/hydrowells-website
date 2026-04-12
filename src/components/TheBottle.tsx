@@ -8,7 +8,7 @@ const TheBottle = ({ hideBottle = false }: { hideBottle?: boolean }) => {
       {/* The Section Glow */}
       <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_150px_rgba(0,91,237,0.15)] z-0" />
       
-      <div className="max-w-[1400px] mx-auto grid grid-cols-[1fr,1.3fr] md:grid-cols-2 gap-16 md:gap-10 items-center px-6 md:px-[60px] relative z-10 w-full">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-[1.4fr,1fr] md:grid-cols-2 gap-16 md:gap-10 items-center px-6 md:px-[60px] relative z-10 w-full">
         <FadeInScope delay={1.5}>
           <span className="text-primary text-[13px] font-bold tracking-[0.2em] block mb-6">
             the bottle.

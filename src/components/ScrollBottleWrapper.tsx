@@ -30,11 +30,11 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
     <div ref={containerRef} className="relative">
       <div className="absolute inset-0 pointer-events-none z-50">
         <div className="sticky top-0 h-screen w-full flex items-center px-6 md:px-[60px]">
-          <div className="max-w-[1400px] mx-auto grid grid-cols-[1fr,1.3fr] md:grid-cols-2 gap-6 md:gap-10 items-center w-full h-full">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-[1.4fr,1fr] md:grid-cols-2 gap-4 md:gap-10 items-center w-full h-full">
             <div className="block"></div>
             <div className="flex justify-center md:justify-end items-center relative">
               <motion.div 
-                className="w-full max-w-[240px] md:max-w-[540px] flex justify-center origin-center"
+                className="w-full max-w-[220px] md:max-w-[540px] flex justify-center origin-center"
                 style={{ 
                   scale,
                   rotateZ,
