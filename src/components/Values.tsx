@@ -63,7 +63,7 @@ const Values = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-[17px] text-white/70 leading-relaxed max-w-[520px]"
         >
-          every bottle is a promise clean, pure and responsibly made. we go beyond industry standards so you can drink with confidence.
+          every bottle is clean, pure and responsibly made. we go beyond industry standards so you can drink with confidence.
         </motion.p>
       </motion.div>
 
