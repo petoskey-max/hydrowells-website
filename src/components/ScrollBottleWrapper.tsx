@@ -21,7 +21,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
 
   // Calculate 3D-like float transforms
   // As it scrolls between sections, it pops out, rotates, and stabilizes
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.3, 1.45, 1.3]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.75, 1.95, 1.75]);
   const rotateZ = useTransform(scrollYProgress, [0, 0.5, 1], [0, 12, 0]);
   const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], [0, 30, 0]);
   const yFloat = useTransform(scrollYProgress, [0, 0.5, 1], [35, -100, -20]);
@@ -30,11 +30,11 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
     <div ref={containerRef} className="relative">
       <div className="absolute inset-0 pointer-events-none z-50">
         <div className="sticky top-0 h-screen w-full flex items-center px-6 md:px-[60px]">
-          <div className="max-w-[1400px] mx-auto grid grid-cols-[1.4fr,1fr] md:grid-cols-2 gap-4 md:gap-10 items-center w-full h-full">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-[1.5fr,1fr] md:grid-cols-2 gap-4 md:gap-10 items-center w-full h-full">
             <div className="block"></div>
             <div className="flex justify-center md:justify-end items-center relative">
               <motion.div 
-                className="w-full max-w-[280px] md:max-w-[540px] flex justify-center origin-center"
+                className="w-full max-w-[200px] md:max-w-[540px] flex justify-center origin-center"
                 style={{ 
                   scale,
                   rotateZ,
