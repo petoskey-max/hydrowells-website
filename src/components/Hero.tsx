@@ -15,7 +15,7 @@ const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
           premium hydration
         </p>
         <h1 className="text-[clamp(48px,6.5vw,96px)] font-extrabold text-foreground leading-[1.0] tracking-[-2.5px] mb-7">
-          water,
+          water
           <br />
           reimagined.
         </h1>
