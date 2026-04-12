@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const values = [
-  { icon: "💧", title: "Pure Source", desc: "Sourced from deep aquifers, naturally protected from surface contaminants." },
-  { icon: "⚡", title: "3x Filtered", desc: "Triple-stage reverse osmosis for the cleanest water you can drink." },
-  { icon: "🧊", title: "Mineral Rich", desc: "Enhanced with essential minerals for the perfect taste and health balance." },
-  { icon: "♻️", title: "Eco Friendly", desc: "100% recyclable bottles and carbon neutral production process." },
-  { icon: "🚚", title: "Fast Delivery", desc: "Delivered fresh to your doorstep Lagos, Abuja and nationwide." },
+  { icon: "💧", title: "cleanliness", desc: "committed to the highest standards of hygiene." },
+  { icon: "🛡️", title: "safety", desc: "ensuring water that is safe and trustworthy." },
+  { icon: "💎", title: "integrity", desc: "transparency in every process, from production to delivery." },
+  { icon: "🤝", title: "commitment", desc: "dedicated to improving lives through access to quality water." },
+  { icon: "⚡", title: "vitality", desc: "supporting life and energy in every sip." },
 ];
 
 const containerVariants = {
