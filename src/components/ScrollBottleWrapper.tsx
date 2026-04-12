@@ -28,7 +28,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
 
   return (
     <div ref={containerRef} className="relative">
-      <div className="sticky top-0 h-screen w-full flex items-center px-6 md:px-[60px] pointer-events-none z-50">
+      <div className="sticky top-0 h-screen w-full flex items-center px-6 md:px-[60px] pointer-events-none z-50 overflow-x-hidden">
         <div className="max-w-[1400px] mx-auto grid grid-cols-[1.5fr,1fr] md:grid-cols-2 gap-4 md:gap-10 items-center w-full h-full">
           <div className="block"></div>
           <div className="flex justify-center md:justify-end items-center relative">
