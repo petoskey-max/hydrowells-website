@@ -43,7 +43,7 @@ const Values = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-xs font-semibold text-primary tracking-[2px] lowercase mb-4"
         >
-          why hydrowells
+          our values
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -52,9 +52,9 @@ const Values = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-[clamp(36px,4vw,64px)] font-extrabold leading-[1.05] tracking-[-2px] mb-5 text-white"
         >
-          water that works
+          why
           <br />
-          as hard as you.
+          hydrowells
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
