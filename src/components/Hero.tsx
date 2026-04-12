@@ -29,13 +29,13 @@ const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
             href="#products"
             className="bg-primary text-primary-foreground px-9 py-4 rounded-full text-[15px] font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all"
           >
-            Explore Products
+            explore products
           </a>
           <a
             href="#about"
             className="border border-border text-foreground px-9 py-4 rounded-full text-[15px] font-medium hover:border-primary transition-colors"
           >
-            Our Story
+            our story
           </a>
         </div>
       </FadeInScope>
