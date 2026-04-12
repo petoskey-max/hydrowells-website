@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { FadeInScope } from "./FadeInScope";
 
 const steps = [
-  { num: "01", title: "Source", desc: "Water drawn from deep, protected underground aquifers." },
-  { num: "02", title: "Purify", desc: "3 stage reverse osmosis and UV treatment for absolute purity." },
-  { num: "03", title: "Enrich", desc: "Minerals added back for optimal taste and health benefits." },
-  { num: "04", title: "Bottle", desc: "Sealed in eco friendly, BPA free bottles for freshness." },
+  { num: "01", title: "source", desc: "water drawn from deep, protected underground aquifers." },
+  { num: "02", title: "purify", desc: "3 stage reverse osmosis and uv treatment for absolute purity." },
+  { num: "03", title: "enrich", desc: "minerals added back for optimal taste and health benefits." },
+  { num: "04", title: "bottle", desc: "sealed in eco friendly, bpa free bottles for freshness." },
 ];
 
 const Process = () => {
@@ -28,7 +28,7 @@ const Process = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-[clamp(36px,4vw,64px)] font-extrabold leading-[1.05] tracking-[-2px] mb-5 text-foreground"
         >
-          from aquifer
+          from the source
           <br />
           to your door.
         </motion.h2>
