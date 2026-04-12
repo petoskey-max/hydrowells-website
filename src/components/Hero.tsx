@@ -27,13 +27,13 @@ const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
         <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="#products"
-            className="bg-primary text-primary-foreground px-9 py-4 rounded-full text-[15px] font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all"
+            className="bg-primary text-primary-foreground px-6 py-4 rounded-full text-[15px] font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all whitespace-nowrap w-fit"
           >
             explore products
           </a>
           <a
             href="#about"
-            className="border border-border text-foreground px-9 py-4 rounded-full text-[15px] font-medium hover:border-primary transition-colors"
+            className="border border-border text-foreground px-6 py-4 rounded-full text-[15px] font-medium hover:border-primary transition-colors whitespace-nowrap w-fit"
           >
             our story
           </a>
