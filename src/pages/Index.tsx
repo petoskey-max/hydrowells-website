@@ -21,7 +21,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div>
       <Navbar />
       <ScrollBottleWrapper>
         <Hero hideBottle />

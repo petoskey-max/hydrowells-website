@@ -4,10 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    overflow-x: hidden;
-  }
+html, 
+body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
 @layer base {
