@@ -56,9 +56,9 @@ const Eco = () => {
           {cycle.map((c, i) => (
             <div
               key={i}
-              className="bg-background rounded-3xl p-8 text-center border border-border hover:border-primary/30 transition-all duration-300 group"
+              className="bg-background rounded-3xl p-8 text-center border border-border hover:border-primary/30 transition-all duration-300 group flex flex-col items-center"
             >
-              <div className="text-primary mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 shadow-inner">
                 {c.icon}
               </div>
               <p className="text-xs font-bold text-primary tracking-widest uppercase">{c.label}</p>
