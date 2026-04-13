@@ -5,7 +5,7 @@ const stats = [
   { num: "100%", label: "recyclable bottle material" },
   { num: "3x", label: "filtration stages before bottling" },
   { num: "0", label: "unnecessary additives or chemicals" },
-  { num: "RO", label: "reverse osmosis technology" },
+  { num: "ro", label: "reverse osmosis technology" },
 ];
 
 const cycle = [

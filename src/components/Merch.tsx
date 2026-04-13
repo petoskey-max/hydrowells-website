@@ -3,27 +3,27 @@ import { ShoppingBag } from "lucide-react";
 
 const merch = [
   {
-    name: "Hydrowells Cap",
+    name: "hydrowells cap",
     price: "₦5,500",
-    desc: "Premium cotton cap with embroidered logo. Adjustable fit.",
+    desc: "premium cotton cap with embroidered logo. adjustable fit.",
     emoji: "🧢",
   },
   {
-    name: "Hydrowells Tote",
+    name: "hydrowells tote",
     price: "₦4,000",
-    desc: "Eco friendly canvas tote carry your bottles in style.",
+    desc: "eco friendly canvas tote carry your bottles in style.",
     emoji: "👜",
   },
   {
-    name: "Hydrowells Hoodie",
+    name: "hydrowells hoodie",
     price: "₦18,000",
-    desc: "Premium heavyweight hoodie with minimalist branding.",
+    desc: "premium heavyweight hoodie with minimalist branding.",
     emoji: "🧥",
   },
   {
-    name: "Hydrowells Tumbler",
+    name: "hydrowells tumbler",
     price: "₦12,000",
-    desc: "Insulated stainless steel tumbler keeps water cold for 24hrs.",
+    desc: "insulated stainless steel tumbler keeps water cold for 24hrs.",
     emoji: "🥤",
   },
 ];

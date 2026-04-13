@@ -33,7 +33,7 @@ const Lifestyle = () => {
           href="#process"
           className="bg-background text-foreground px-9 py-4 rounded-full text-[15px] font-bold w-fit hover:-translate-y-0.5 hover:shadow-xl transition-all"
         >
-          See Our Process
+          see our process
         </a>
       </motion.div>
     </section>

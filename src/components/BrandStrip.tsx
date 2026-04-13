@@ -1,4 +1,4 @@
-const brands = ["NAFDAC APPROVED", "ISO CERTIFIED", "WHO STANDARD", "100% RECYCLABLE", "RO TECHNOLOGY", "MINERAL BALANCED"];
+const brands = ["nafdac approved", "iso certified", "who standard", "100% recyclable", "ro technology", "mineral balanced"];
 
 const BrandStrip = () => {
   return (

@@ -3,32 +3,32 @@ import { Calendar, Users, Star, Sparkles } from "lucide-react";
 
 const events = [
   {
-    title: "Lagos Water Festival",
-    date: "July 2026",
-    desc: "Join us at Nigeria's largest hydration and wellness festival tastings, panels and more.",
+    title: "lagos water festival",
+    date: "july 2026",
+    desc: "join us at nigeria's largest hydration and wellness festival tastings, panels and more.",
     icon: <Sparkles className="w-6 h-6" />,
-    tag: "Upcoming",
+    tag: "upcoming",
   },
   {
-    title: "Corporate Wellness Day",
-    date: "August 2026",
-    desc: "Partner with hydrowells to bring pure hydration to your team's wellness initiatives.",
+    title: "corporate wellness day",
+    date: "august 2026",
+    desc: "partner with hydrowells to bring pure hydration to your team's wellness initiatives.",
     icon: <Users className="w-6 h-6" />,
-    tag: "Open for Booking",
+    tag: "open for booking",
   },
   {
-    title: "Hydrowells Run Club",
-    date: "Every Saturday",
-    desc: "Weekly community runs across Lagos free hydrowells bottles for every finisher.",
+    title: "hydrowells run club",
+    date: "every saturday",
+    desc: "weekly community runs across lagos free hydrowells bottles for every finisher.",
     icon: <Calendar className="w-6 h-6" />,
-    tag: "Recurring",
+    tag: "recurring",
   },
   {
-    title: "Premium Tasting Experience",
-    date: "September 2026",
-    desc: "An exclusive invite-only tasting where you experience the purity of every drop.",
+    title: "premium tasting experience",
+    date: "september 2026",
+    desc: "an exclusive invite-only tasting where you experience the purity of every drop.",
     icon: <Star className="w-6 h-6" />,
-    tag: "Exclusive",
+    tag: "exclusive",
   },
 ];
 
@@ -77,7 +77,7 @@ const Events = () => {
                   {e.tag}
                 </span>
               </div>
-              <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-2">{e.date}</p>
+              <p className="text-xs font-semibold text-primary tracking-wider lowercase mb-2">{e.date}</p>
               <h3 className="text-xl font-extrabold text-foreground tracking-[-0.5px] mb-3">{e.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{e.desc}</p>
             </div>

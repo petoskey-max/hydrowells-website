@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     quote: "hydrowells changed how I think about drinking water. it's cleaner, smoother and I can actually taste the difference.",
-    name: "Adeola Johnson",
-    role: "Fitness Coach, Lagos",
-    initials: "AJ",
+    name: "adeola johnson",
+    role: "fitness coach, lagos",
+    initials: "aj",
   },
   {
     quote: "we switched our entire office to hydrowells. the delivery is consistent and the team loves the taste. no complaints, only compliments.",
-    name: "Emeka Obi",
-    role: "CEO, TechSpace",
-    initials: "EO",
+    name: "emeka obi",
+    role: "ceo, techspace",
+    initials: "eo",
   },
   {
     quote: "as a mum, water quality is non-negotiable. hydrowells gives me peace of mind knowing my family is drinking safe, clean water every day.",
-    name: "Fatima Bello",
-    role: "Mother of 3, Abuja",
-    initials: "FB",
+    name: "fatima bello",
+    role: "mother of 3, abuja",
+    initials: "fb",
   },
 ];
 

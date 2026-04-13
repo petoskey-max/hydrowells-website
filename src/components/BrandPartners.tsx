@@ -2,26 +2,26 @@ import { motion } from "framer-motion";
 import { Handshake, Building2, Trophy, Globe } from "lucide-react";
 
 const partners = [
-  { name: "TechSpace", type: "Corporate Partner", icon: <Building2 className="w-5 h-5" /> },
-  { name: "Fit Lagos", type: "Wellness Partner", icon: <Trophy className="w-5 h-5" /> },
-  { name: "Green Nigeria", type: "Sustainability Partner", icon: <Globe className="w-5 h-5" /> },
-  { name: "EventNG", type: "Events Partner", icon: <Handshake className="w-5 h-5" /> },
+  { name: "techspace", type: "corporate partner", icon: <Building2 className="w-5 h-5" /> },
+  { name: "fit lagos", type: "wellness partner", icon: <Trophy className="w-5 h-5" /> },
+  { name: "green nigeria", type: "sustainability partner", icon: <Globe className="w-5 h-5" /> },
+  { name: "eventng", type: "events partner", icon: <Handshake className="w-5 h-5" /> },
 ];
 
 const pillars = [
   {
-    title: "Brand Ambassadors",
-    desc: "Join our community of ambassadors who embody the hydrowells lifestyle and spread the message of premium hydration.",
+    title: "brand ambassadors",
+    desc: "join our community of ambassadors who embody the hydrowells lifestyle and spread the message of premium hydration.",
     gradient: "from-primary/20 to-primary/5",
   },
   {
-    title: "Corporate Partnerships",
-    desc: "We partner with forward-thinking companies to provide premium hydration solutions for their teams and events.",
+    title: "corporate partnerships",
+    desc: "we partner with forward-thinking companies to provide premium hydration solutions for their teams and events.",
     gradient: "from-primary/10 to-transparent",
   },
   {
-    title: "Community Impact",
-    desc: "Through strategic partnerships, we're bringing clean water access and recycling awareness to communities across Nigeria.",
+    title: "community impact",
+    desc: "through strategic partnerships, we're bringing clean water access and recycling awareness to communities across nigeria.",
     gradient: "from-primary/15 to-primary/5",
   },
 ];
@@ -108,7 +108,7 @@ const BrandPartners = () => {
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full text-[15px] font-bold hover:shadow-xl transition-all mt-4"
           >
             <Handshake className="w-4 h-4" />
-            Become a Partner
+            become a partner
           </motion.a>
         </motion.div>
       </div>

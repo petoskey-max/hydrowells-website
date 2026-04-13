@@ -31,7 +31,7 @@ const Campaign = () => {
           href="#about"
           className="bg-background text-foreground px-9 py-4 rounded-full text-[15px] font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all"
         >
-          Learn More
+          learn more
         </a>
       </motion.div>
     </section>

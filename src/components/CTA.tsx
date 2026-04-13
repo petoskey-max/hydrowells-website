@@ -37,13 +37,13 @@ const CTA = () => {
             href="#products"
             className="bg-primary text-primary-foreground px-9 py-4 rounded-full text-[15px] font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all"
           >
-            Shop Now
+            shop now
           </a>
           <a
             href="#contact"
             className="border border-white/30 text-white px-9 py-4 rounded-full text-[15px] font-medium hover:border-white transition-colors"
           >
-            Contact Us
+            contact us
           </a>
         </div>
       </motion.div>

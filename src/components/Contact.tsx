@@ -40,7 +40,7 @@ const Contact = () => {
                 <Mail className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-white">Email</p>
+                <p className="text-sm font-semibold text-white">email</p>
                 <p className="text-sm text-white/60">hello@hydrowells.com</p>
               </div>
             </div>
@@ -49,7 +49,7 @@ const Contact = () => {
                 <Phone className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-white">Phone</p>
+                <p className="text-sm font-semibold text-white">phone</p>
                 <p className="text-sm text-white/60">+234 800 HYDRO WELLS</p>
               </div>
             </div>
@@ -58,7 +58,7 @@ const Contact = () => {
                 <MapPin className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-white">Location</p>
+                <p className="text-sm font-semibold text-white">location</p>
                 <p className="text-sm text-white/60">Lagos, Nigeria</p>
               </div>
             </div>
@@ -73,7 +73,7 @@ const Contact = () => {
           className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-9 space-y-5"
         >
           <div>
-            <label className="text-sm font-semibold text-white mb-2 block">Name</label>
+            <label className="text-sm font-semibold text-white mb-2 block">name</label>
             <input
               type="text"
               required
@@ -84,7 +84,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="text-sm font-semibold text-white mb-2 block">Email</label>
+            <label className="text-sm font-semibold text-white mb-2 block">email</label>
             <input
               type="email"
               required
@@ -95,7 +95,7 @@ const Contact = () => {
             />
           </div>
           <div>
-            <label className="text-sm font-semibold text-white mb-2 block">Message</label>
+            <label className="text-sm font-semibold text-white mb-2 block">message</label>
             <textarea
               required
               rows={5}
