@@ -58,7 +58,7 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="bg-card border border-border rounded-3xl p-9 hover:border-primary hover:-translate-y-1 transition-all duration-300"
+            className="bg-card/50 backdrop-blur-sm rounded-3xl p-9 hover:bg-card hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-black/5"
           >
             <div className="flex gap-1 mb-5">
               {[...Array(5)].map((_, j) => <Star key={j} />)}
