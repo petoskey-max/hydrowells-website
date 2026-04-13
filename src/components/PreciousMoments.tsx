@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import heroBottle from "@/assets/hero-bottle.png";
 
 const moments = [
-  { label: "Weddings", icon: "💍" },
-  { label: "Celebrations", icon: "🥂" },
-  { label: "Corporate", icon: "🏢" },
-  { label: "Wellness", icon: "🧘" },
+  { label: "weddings", icon: "💍" },
+  { label: "celebrations", icon: "🥂" },
+  { label: "corporate", icon: "🏢" },
+  { label: "wellness", icon: "🧘" },
 ];
 
 const PreciousMoments = () => {
@@ -59,7 +59,7 @@ const PreciousMoments = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-xs font-semibold text-primary tracking-[3px] uppercase mb-4">
+          <p className="text-xs font-semibold text-primary tracking-[3px] lowercase mb-4">
             crafted for elegance
           </p>
           <h2 className="text-[clamp(36px,4.5vw,68px)] font-extrabold text-foreground leading-[1.05] tracking-[-2px] mb-6">
@@ -94,7 +94,7 @@ const PreciousMoments = () => {
             href="#products"
             className="inline-block bg-primary text-primary-foreground px-9 py-4 rounded-full text-[15px] font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all"
           >
-            Discover Our Range
+            discover our range
           </a>
         </motion.div>
       </div>
