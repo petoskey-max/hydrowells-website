@@ -1,10 +1,18 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import heroBottle from "@/assets/hero-bottle.png";
 
 export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   // Track scroll over the entire container (Hero + TheBottle)
   const { scrollYProgress: rawScroll } = useScroll({
     target: containerRef,
@@ -12,7 +20,6 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
   });
 
   // Add physics-based smoothing (Spring) to the scroll input
-  // This removes "jitters" from mouse wheels and makes it feel like Three.js
   const scrollYProgress = useSpring(rawScroll, {
     stiffness: 100,
     damping: 30,
@@ -25,6 +32,15 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
   const rotateZ = useTransform(scrollYProgress, [0, 0.5, 1], [0, 12, 0]);
   const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], [0, 30, 0]);
   const yFloat = useTransform(scrollYProgress, [0, 0.5, 1], [35, -100, 40]);
+  
+  // Mobile-only fade effect: visible in Hero, fades out for Values, back in for The Bottle
+  const mobileOpacity = useTransform(
+    scrollYProgress, 
+    [0, 0.25, 0.35, 0.65, 0.75, 1], 
+    [1, 1, 0, 0, 1, 1]
+  );
+  
+  const opacity = isMobile ? mobileOpacity : 1;
 
   return (
     <div ref={containerRef} className="relative">
@@ -39,6 +55,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
                 rotateZ,
                 rotateY,
                 y: yFloat,
+                opacity,
                 willChange: "transform",
               }}
             >
