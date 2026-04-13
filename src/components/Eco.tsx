@@ -1,5 +1,10 @@
-import { motion } from "framer-motion";
 import { FadeInScope } from "./FadeInScope";
+import { 
+  Recycle, 
+  ArrowsClockwise, 
+  CheckCircle, 
+  Leaf 
+} from "@phosphor-icons/react";
 
 const stats = [
   { num: "100%", label: "recyclable bottle material" },
@@ -9,10 +14,10 @@ const stats = [
 ];
 
 const cycle = [
-  { icon: "♻️", label: "collect" },
-  { icon: "🔄", label: "process" },
-  { icon: "✅", label: "certify" },
-  { icon: "🌿", label: "reduce" },
+  { icon: <Recycle size={32} weight="duotone" />, label: "collect" },
+  { icon: <ArrowsClockwise size={32} weight="duotone" />, label: "process" },
+  { icon: <CheckCircle size={32} weight="duotone" />, label: "certify" },
+  { icon: <Leaf size={32} weight="duotone" />, label: "reduce" },
 ];
 
 const Eco = () => {
@@ -51,10 +56,12 @@ const Eco = () => {
           {cycle.map((c, i) => (
             <div
               key={i}
-              className="bg-background rounded-2xl p-8 text-center border border-primary/20"
+              className="bg-background rounded-3xl p-8 text-center border border-border hover:border-primary/30 transition-all duration-300 group"
             >
-              <div className="text-3xl mb-3">{c.icon}</div>
-              <p className="text-sm font-bold text-primary">{c.label}</p>
+              <div className="text-primary mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+                {c.icon}
+              </div>
+              <p className="text-xs font-bold text-primary tracking-widest uppercase">{c.label}</p>
             </div>
           ))}
         </div>
