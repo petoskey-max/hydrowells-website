@@ -38,7 +38,7 @@ const cardVariants = {
 const Values = () => {
   return (
     <section className="py-24 px-6 md:px-[60px] bg-gradient-to-br from-[#000000] to-[#005bed] text-white [perspective:2000px] overflow-hidden" id="about">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[1.8fr,1fr] xl:grid-cols-[2.2fr,1fr] gap-20 items-start">
         {/* Left column: Content */}
         <div className="relative z-10">
           <motion.div
@@ -83,7 +83,7 @@ const Values = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-14"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-14"
           >
             {values.map((v, i) => (
               <motion.div
