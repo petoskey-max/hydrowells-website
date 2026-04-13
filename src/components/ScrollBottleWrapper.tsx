@@ -33,7 +33,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
           <div className="block"></div>
           <div className="flex justify-center md:justify-end items-center relative">
             <motion.div 
-              className="w-full max-w-[280px] md:max-w-[330px] flex justify-center origin-center"
+              className="w-full max-w-[280px] md:max-w-[265px] flex justify-center origin-center"
               style={{ 
                 scale,
                 rotateZ,
