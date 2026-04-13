@@ -20,9 +20,7 @@ const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
           reimagined.
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-[460px]">
-          hydrowells delivers ultra-pure, mineral-balanced water
-          through cutting edge filtration bottled at the source, crafted for
-          those who demand more from every drop.
+          hydrowells delivers ultra-pure, mineral balanced water through cutting edge filtration. bottled at the source, hydrowells is crafted for those who demand more from every drop.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <a
