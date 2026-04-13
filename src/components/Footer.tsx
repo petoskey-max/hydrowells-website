@@ -11,36 +11,36 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h4 className="text-[11px] font-semibold text-white/35 tracking-[2px] mb-5 uppercase">Company</h4>
+          <h4 className="text-[11px] font-semibold text-white/35 tracking-[2px] mb-5 lowercase">company</h4>
           <ul className="space-y-2.5">
-            <li><a href="#about" className="text-sm text-white/55 hover:text-white transition-colors">About Us</a></li>
-            <li><a href="#products" className="text-sm text-white/55 hover:text-white transition-colors">Products</a></li>
-            <li><a href="#process" className="text-sm text-white/55 hover:text-white transition-colors">Process</a></li>
-            <li><a href="#reviews" className="text-sm text-white/55 hover:text-white transition-colors">Reviews</a></li>
+            <li><a href="#about" className="text-sm text-white/55 hover:text-white transition-colors">about us</a></li>
+            <li><a href="#products" className="text-sm text-white/55 hover:text-white transition-colors">products</a></li>
+            <li><a href="#process" className="text-sm text-white/55 hover:text-white transition-colors">process</a></li>
+            <li><a href="#reviews" className="text-sm text-white/55 hover:text-white transition-colors">reviews</a></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-[11px] font-semibold text-white/35 tracking-[2px] mb-5 uppercase">Support</h4>
+          <h4 className="text-[11px] font-semibold text-white/35 tracking-[2px] mb-5 lowercase">support</h4>
           <ul className="space-y-2.5">
-            <li><a href="#contact" className="text-sm text-white/55 hover:text-white transition-colors">Contact</a></li>
-            <li><a href="#" className="text-sm text-white/55 hover:text-white transition-colors">FAQs</a></li>
-            <li><a href="#" className="text-sm text-white/55 hover:text-white transition-colors">Delivery Info</a></li>
+            <li><a href="#contact" className="text-sm text-white/55 hover:text-white transition-colors">contact</a></li>
+            <li><a href="#" className="text-sm text-white/55 hover:text-white transition-colors">faqs</a></li>
+            <li><a href="#" className="text-sm text-white/55 hover:text-white transition-colors">delivery info</a></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-[11px] font-semibold text-white/35 tracking-[2px] mb-5 uppercase">Legal</h4>
+          <h4 className="text-[11px] font-semibold text-white/35 tracking-[2px] mb-5 lowercase">legal</h4>
           <ul className="space-y-2.5">
-            <li><a href="#" className="text-sm text-white/55 hover:text-white transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="text-sm text-white/55 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" className="text-sm text-white/55 hover:text-white transition-colors">privacy policy</a></li>
+            <li><a href="#" className="text-sm text-white/55 hover:text-white transition-colors">terms of service</a></li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-white/10 pt-8 flex justify-between items-center">
         <p className="text-[13px] text-white/25">
-          © 2026 HYDROWELLS® All rights reserved.
+          © 2026 hydrowells® all rights reserved.
         </p>
-        <p className="text-white/25 text-[13px]">Nigeria's Premium Water</p>
+        <p className="text-white/25 text-[13px]">nigeria's premium water</p>
       </div>
 
       <div className="mt-8 overflow-hidden">
