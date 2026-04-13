@@ -1,11 +1,19 @@
 import { motion } from "framer-motion";
 
+import { 
+  Drop, 
+  ShieldCheck, 
+  SealCheck, 
+  Handshake, 
+  Lightning 
+} from "@phosphor-icons/react";
+
 const values = [
-  { icon: "💧", title: "cleanliness", desc: "committed to the highest standards of hygiene." },
-  { icon: "🛡️", title: "safety", desc: "ensuring water that is safe and trustworthy." },
-  { icon: "💎", title: "integrity", desc: "transparency in every process, from production to delivery." },
-  { icon: "🤝", title: "commitment", desc: "dedicated to improving lives through access to quality water." },
-  { icon: "⚡", title: "vitality", desc: "supporting life and energy in every sip." },
+  { icon: <Drop size={28} weight="duotone" />, title: "cleanliness", desc: "committed to the highest standards of hygiene." },
+  { icon: <ShieldCheck size={28} weight="duotone" />, title: "safety", desc: "ensuring water that is safe and trustworthy." },
+  { icon: <SealCheck size={28} weight="duotone" />, title: "integrity", desc: "transparency in every process, from production to delivery." },
+  { icon: <Handshake size={28} weight="duotone" />, title: "commitment", desc: "dedicated to improving lives through access to quality water." },
+  { icon: <Lightning size={28} weight="duotone" />, title: "vitality", desc: "supporting life and energy in every sip." },
 ];
 
 const containerVariants = {
@@ -75,27 +83,27 @@ const Values = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 mt-14 border border-white/20 rounded-3xl overflow-hidden"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-14"
           >
             {values.map((v, i) => (
               <motion.div
                 key={i}
                 variants={cardVariants}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="group p-8 md:p-10 border-b last:border-b-0 sm:even:border-l sm:border-b border-white/10 hover:bg-white/10 transition-colors duration-300 cursor-default"
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="group p-8 md:p-10 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl hover:border-primary/40 transition-all duration-300 cursor-default shadow-lg shadow-black/20"
               >
-                <div className="flex items-start gap-5">
+                <div className="flex items-start gap-6">
                   <motion.div
                     whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.4 } }}
-                    className="w-12 h-12 flex-shrink-0 bg-white/10 group-hover:bg-white/20 rounded-xl flex items-center justify-center text-xl transition-colors"
+                    className="w-14 h-14 flex-shrink-0 bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground rounded-2xl flex items-center justify-center transition-all duration-300 shadow-inner"
                   >
                     {v.icon}
                   </motion.div>
                   <div>
-                    <h3 className="text-[15px] font-bold mb-2.5 text-white transition-colors">
+                    <h3 className="text-lg font-bold mb-2 text-white transition-colors">
                       {v.title}
                     </h3>
-                    <p className="text-[13px] text-white/60 group-hover:text-white/80 leading-relaxed transition-colors">
+                    <p className="text-sm text-white/50 group-hover:text-white/80 leading-relaxed transition-colors">
                       {v.desc}
                     </p>
                   </div>
