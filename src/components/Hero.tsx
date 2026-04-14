@@ -15,9 +15,55 @@ const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
           premium hydration
         </p>
         <h1 className="text-[clamp(32px,6.5vw,96px)] font-extrabold text-foreground leading-[1.0] tracking-[-2px] mb-7">
-          water
+          <motion.span
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1,
+                  delayChildren: 0.5,
+                },
+              },
+            }}
+          >
+            {"water".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, display: "none" },
+                  visible: { opacity: 1, display: "inline-block" },
+                }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.span>
           <br />
-          reimagined.
+          <motion.span
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.08,
+                  delayChildren: 1.1, // Start after "water"
+                },
+              },
+            }}
+          >
+            {"reimagined.".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, display: "none" },
+                  visible: { opacity: 1, display: "inline-block" },
+                }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.span>
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed mb-12 max-w-[460px]">
           hydrowells delivers ultra-pure, mineral balanced water through cutting edge filtration. bottled at the source, hydrowells is crafted for those who demand more from every drop.
