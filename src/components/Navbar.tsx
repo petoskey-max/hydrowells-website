@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -107,36 +107,70 @@ const Navbar = () => {
       </div>
 
       {/* Mobile/Tablet menu */}
-      {mobileOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden bg-background/98 backdrop-blur-xl border-b border-border px-6 pb-6"
-        >
-          <ul className="flex flex-col gap-4 list-none">
-            {links.map((link) => (
-              <li key={link.href}>
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[70] bg-background lg:hidden flex flex-col p-6"
+          >
+            {/* Mobile Menu Header */}
+            <div className="flex items-center justify-between mb-12">
+              <a href="#" onClick={() => setMobileOpen(false)}>
+                <img src={logo} alt="Hydrowells" className="h-[50px] w-auto object-contain" />
+              </a>
+              <button
+                onClick={() => setMobileOpen(false)}
+                className="p-2 text-foreground"
+                aria-label="Close menu"
+              >
+                <X size={28} />
+              </button>
+            </div>
+
+            <ul className="flex flex-col gap-6 list-none overflow-y-auto">
+              {links.map((link) => (
+                <li key={link.href} className="flex flex-col gap-3">
+                  <a
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-2xl font-bold text-foreground hover:text-primary transition-colors lowercase"
+                  >
+                    {link.label}
+                  </a>
+                  {link.subLinks && (
+                    <ul className="flex flex-col gap-3 pl-4 border-l border-border ml-1">
+                      {link.subLinks.map((sub) => (
+                        <li key={sub.href}>
+                          <a
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="text-lg font-medium text-foreground/50 hover:text-primary transition-colors lowercase"
+                          >
+                            {sub.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+              <li className="mt-4">
                 <a
-                  href={link.href}
+                  href="#shop"
                   onClick={() => setMobileOpen(false)}
-                  className="text-base font-medium text-foreground/70 hover:text-primary transition-colors"
+                  className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 rounded-full text-base font-bold hover:bg-primary/90 transition-colors w-full text-center"
                 >
-                  {link.label}
+                  order now
                 </a>
               </li>
-            ))}
-            <li>
-              <a
-                href="#shop"
-                onClick={() => setMobileOpen(false)}
-                className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors w-full text-center"
-              >
-                order now
-              </a>
-            </li>
-          </ul>
-        </motion.div>
-      )}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };
