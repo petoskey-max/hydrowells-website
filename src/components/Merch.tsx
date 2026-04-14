@@ -59,14 +59,14 @@ const Merch = () => {
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
             whileHover={{ y: -6, scale: 1.02 }}
-            className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-7 hover:border-white/30 transition-all duration-300 cursor-pointer"
+            className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-7 hover:border-white/30 transition-all duration-300 cursor-pointer flex flex-col h-full"
           >
             <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
               {m.emoji}
             </div>
-            <h3 className="text-base font-bold text-white mb-1">{m.name}</h3>
+            <h3 className="text-base font-bold text-white mb-1">{m.name === "hydrowells tote" ? "hydrowells tote bag" : m.name}</h3>
             <p className="text-xs text-white/50 leading-relaxed mb-4">{m.desc}</p>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between mt-auto">
               <span className="text-lg font-extrabold text-primary">{m.price}</span>
               <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground text-white/50 transition-all duration-300">
                 <ShoppingBag className="w-4 h-4" />
