@@ -17,6 +17,7 @@ import Merch from "@/components/Merch";
 import BrandPartners from "@/components/BrandPartners";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
+import SocialFollow from "@/components/SocialFollow";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -42,6 +43,7 @@ const Index = () => {
       <BrandPartners />
       <CTA />
       <Contact />
+      <SocialFollow />
       <Footer />
     </div>
   );
