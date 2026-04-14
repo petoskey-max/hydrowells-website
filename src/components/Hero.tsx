@@ -17,7 +17,8 @@ const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
         <h1 className="text-[clamp(32px,6.5vw,96px)] font-extrabold text-foreground leading-[1.0] tracking-[-2px] mb-7">
           <motion.span
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: false }}
             variants={{
               visible: {
                 transition: {
@@ -42,7 +43,8 @@ const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
           <br />
           <motion.span
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: false }}
             variants={{
               visible: {
                 transition: {
