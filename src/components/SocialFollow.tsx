@@ -5,71 +5,84 @@ const SocialFollow = () => {
   const socials = [
     {
       name: "Instagram",
-      icon: <InstagramLogo size={32} weight="bold" />,
+      icon: <InstagramLogo size={36} weight="duotone" />,
       link: "#",
-      color: "hover:text-[#E4405F]",
       delay: 0.1,
     },
     {
       name: "Facebook",
-      icon: <FacebookLogo size={32} weight="bold" />,
+      icon: <FacebookLogo size={36} weight="duotone" />,
       link: "#",
-      color: "hover:text-[#1877F2]",
       delay: 0.2,
     },
     {
       name: "TikTok",
-      icon: <TiktokLogo size={32} weight="bold" />,
+      icon: <TiktokLogo size={36} weight="duotone" />,
       link: "#",
-      color: "hover:text-[#000000]",
       delay: 0.3,
     },
   ];
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-6 text-center">
+    <section className="relative py-32 px-6 md:px-[60px] overflow-hidden">
+      {/* Background gradient overlay - matching contact section */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#000000]/95 via-[#000000]/85 to-[#005bed]/90" />
+      
+      {/* Decorative Blur */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="container mx-auto relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">
-            Connect with us
+          <p className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6">
+            Join the movement
           </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-12 text-slate-900">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-16 text-white leading-tight">
             Follow the wave.
+            <br />
+            <span className="text-white/40">Connect with Hydrowells.</span>
           </h2>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 mt-12">
           {socials.map((social) => (
             <motion.a
               key={social.name}
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ y: -8 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -12 }}
               viewport={{ once: true }}
               transition={{
                 delay: social.delay,
-                duration: 0.5,
+                duration: 0.6,
                 type: "spring",
-                stiffness: 200,
+                stiffness: 100,
               }}
-              className={`flex flex-col items-center gap-3 text-slate-400 transition-colors duration-300 ${social.color}`}
+              className="group flex flex-col items-center gap-6"
             >
-              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm transition-all duration-300 hover:shadow-xl hover:bg-white group">
-                <div className="transition-transform duration-300 group-hover:scale-110">
-                  {social.icon}
+              <div className="relative">
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-primary/40 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:border-primary/50 group-hover:bg-white/10 group-hover:scale-105 shadow-2xl">
+                  <div className="text-primary transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(0,91,237,0.8)]">
+                    {social.icon}
+                  </div>
                 </div>
               </div>
-              <span className="text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {social.name}
-              </span>
+              <div className="flex flex-col items-center">
+                <span className="text-xs font-black uppercase tracking-[0.2em] text-white/30 group-hover:text-primary transition-colors duration-300">
+                  {social.name}
+                </span>
+                <div className="w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-500 mt-2" />
+              </div>
             </motion.a>
           ))}
         </div>
