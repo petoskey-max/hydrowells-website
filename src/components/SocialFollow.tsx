@@ -38,7 +38,7 @@ const SocialFollow = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="text-primary font-bold tracking-[0.3em] lowercase text-xs mb-6">
+          <p className="text-xs font-semibold text-white/60 tracking-[0.3em] lowercase mb-6">
             join the movement
           </p>
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-[-2px] mb-16 text-white leading-tight lowercase">
