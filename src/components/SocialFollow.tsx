@@ -26,7 +26,7 @@ const SocialFollow = () => {
   return (
     <section className="relative py-32 px-6 md:px-[60px] overflow-hidden" style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>
       {/* Background gradient overlay - matching contact section */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#000000]/95 via-[#000000]/85 to-[#005bed]/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#005bed]/90 via-[#000000]/85 to-[#000000]/95" />
       
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
