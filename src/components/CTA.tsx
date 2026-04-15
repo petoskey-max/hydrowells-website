@@ -4,7 +4,7 @@ import ctaBg from "@/assets/cta-bg.jpg";
 const CTA = () => {
   return (
     <section
-      className="relative text-center py-32 px-6 md:px-[60px] overflow-hidden"
+      className="relative text-center py-48 px-6 md:px-[60px] overflow-hidden"
       id="shop"
       style={{
         backgroundImage: `url(${ctaBg})`,
