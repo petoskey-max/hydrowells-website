@@ -12,8 +12,8 @@ const CTA = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Gradient overlay: black/blue on sides, dark at bottom to blend into contact */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/80 via-[#003a95]/50 to-[#000000]" />
+      {/* Gradient overlay: fades into the contact section's blue at the bottom */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/80 via-[#003a95]/60 to-[#003a95]" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
