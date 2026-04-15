@@ -24,7 +24,7 @@ const SocialFollow = () => {
   ];
 
   return (
-    <section className="relative py-32 px-6 md:px-[60px] overflow-hidden">
+    <section className="relative py-32 px-6 md:px-[60px] overflow-hidden" style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>
       {/* Background gradient overlay - matching contact section */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#000000]/95 via-[#000000]/85 to-[#005bed]/90" />
       
@@ -38,13 +38,13 @@ const SocialFollow = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-6">
-            Join the movement
+          <p className="text-primary font-bold tracking-[0.3em] lowercase text-xs mb-6">
+            join the movement
           </p>
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-16 text-white leading-tight">
-            Follow the wave.
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-[-2px] mb-16 text-white leading-tight lowercase">
+            follow the wave.
             <br />
-            <span className="text-white/40">Connect with Hydrowells.</span>
+            <span className="text-white/40">connect with hydrowells.</span>
           </h2>
         </motion.div>
 
@@ -78,8 +78,8 @@ const SocialFollow = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-xs font-black uppercase tracking-[0.2em] text-white/30 group-hover:text-primary transition-colors duration-300">
-                  {social.name}
+                <span className="text-xs font-black lowercase tracking-[0.2em] text-white/30 group-hover:text-primary transition-colors duration-300">
+                  {social.name.toLowerCase()}
                 </span>
                 <div className="w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-500 mt-2" />
               </div>
