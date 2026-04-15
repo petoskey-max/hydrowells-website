@@ -15,7 +15,7 @@ const Contact = () => {
   return (
     <section className="relative py-24 px-6 md:px-[60px] overflow-hidden" id="contact">
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#000000] to-[#005bed]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#000000] via-[#003a95] to-[#001030]" />
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
