@@ -16,7 +16,7 @@ const slides = [
   { img: img3, title: "go for a run.", step: "03", desc: "push your limits. every stride powered by pure hydration clean water fuels clean energy." },
   { img: img4, title: "pray. meditate. journal.", step: "04", desc: "still your mind. nourish your soul. a moment of clarity deserves the purest water." },
   { img: img5, title: "get ready.", step: "05", desc: "your best self starts from within. hydrate, glow, and step into the world with confidence." },
-  { img: img6, title: "slay.", step: "06", desc: "you've earned this moment. hydrowells with you from sunrise to spotlight." },
+  { img: img6, title: "slay.", step: "06", desc: "you've earned this moment. i'm with you from sunrise to spotlight." },
 ];
 
 const WeekendLifestyle = () => {
@@ -95,7 +95,7 @@ const WeekendLifestyle = () => {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="text-[16px] text-muted-foreground leading-relaxed max-w-[520px] mt-4"
         >
-          hydrowells is more than water it's the thread that ties every moment of your perfect weekend together.
+          i am more than water, i'm the thread that ties every moment of your perfect weekend together.
         </motion.p>
       </motion.div>
 

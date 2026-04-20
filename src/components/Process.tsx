@@ -39,7 +39,7 @@ const Process = () => {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="text-[17px] text-muted-foreground leading-relaxed mx-auto"
         >
-          four precise steps that guarantee every bottle meets the hydrowells standard.
+          four precise steps that guarantee every bottle meets my standard.
         </motion.p>
       </FadeInScope>
 

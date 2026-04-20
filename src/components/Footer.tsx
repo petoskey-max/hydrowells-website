@@ -40,7 +40,7 @@ const Footer = () => {
         <p className="text-[13px] text-white/25">
           © 2026 hydrowells® all rights reserved.
         </p>
-        <p className="text-white/25 text-[13px]">nigeria's premium water</p>
+        <p className="text-white/25 text-[13px]">i am nigeria's premium water</p>
       </div>
 
       <div className="mt-8 overflow-hidden">

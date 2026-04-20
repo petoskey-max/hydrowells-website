@@ -11,7 +11,7 @@ const partners = [
 const pillars = [
   {
     title: "brand ambassadors",
-    desc: "join our community of ambassadors who embody the hydrowells lifestyle and spread the message of premium hydration.",
+    desc: "join my community of ambassadors who embody my lifestyle and spread the message of premium hydration.",
     gradient: "from-primary/20 to-primary/5",
   },
   {
@@ -21,7 +21,7 @@ const pillars = [
   },
   {
     title: "community impact",
-    desc: "through strategic partnerships, we're bringing clean water access and recycling awareness to communities across nigeria.",
+    desc: "through strategic partnerships, i'm bringing clean water access and recycling awareness to communities across nigeria.",
     gradient: "from-primary/15 to-primary/5",
   },
 ];
@@ -45,7 +45,7 @@ const BrandPartners = () => {
             movement.
           </h2>
           <p className="text-[17px] text-muted-foreground leading-relaxed max-w-[480px] mb-12">
-            hydrowells isn't just a water brand it's a lifestyle. we collaborate with partners who share our vision of purity, quality and sustainability.
+            i'm not just a water brand, i'm a lifestyle. i collaborate with partners who share my vision of purity, quality and sustainability.
           </p>
 
           {/* Partner logos */}

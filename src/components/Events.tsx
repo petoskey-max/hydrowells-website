@@ -12,14 +12,14 @@ const events = [
   {
     title: "corporate wellness day",
     date: "august 2026",
-    desc: "partner with hydrowells to bring pure hydration to your team's wellness initiatives.",
+    desc: "partner with me to bring pure hydration to your team's wellness initiatives.",
     icon: <Users className="w-6 h-6" />,
     tag: "open for booking",
   },
   {
     title: "hydrowells run club",
     date: "every saturday",
-    desc: "weekly community runs across lagos free hydrowells bottles for every finisher.",
+    desc: "weekly community runs across lagos free bottles of me for every finisher.",
     icon: <Calendar className="w-6 h-6" />,
     tag: "recurring",
   },
@@ -50,7 +50,7 @@ const Events = () => {
           show up.
         </h2>
         <p className="text-[17px] text-muted-foreground leading-relaxed max-w-[520px] mt-5">
-          hydrowells is more than a bottle it's a movement. catch us at events, pop ups and experiences across nigeria.
+          i am more than a bottle, i am a movement. catch me at events, pop ups and experiences across nigeria.
         </p>
       </motion.div>
 

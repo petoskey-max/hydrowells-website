@@ -44,7 +44,7 @@ const SocialFollow = () => {
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-[-2px] mb-16 text-white leading-tight lowercase">
             follow the wave.
             <br />
-            <span className="text-white/40">connect with hydrowells.</span>
+            <span className="text-white/40">connect with me.</span>
           </h2>
         </motion.div>
 

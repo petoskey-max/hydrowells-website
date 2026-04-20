@@ -37,7 +37,7 @@ const Products = () => {
             moment.
           </h2>
           <p className="text-[17px] text-muted-foreground leading-relaxed max-w-[520px] mt-5">
-            from workout sessions to family dinners, hydrowells has a bottle for every occasion.
+            from workout sessions to family dinners, i have a bottle for every occasion.
           </p>
         </FadeInScope>
       </div>

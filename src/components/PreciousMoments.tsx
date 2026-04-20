@@ -70,7 +70,7 @@ const PreciousMoments = () => {
             moments.
           </h2>
           <p className="text-[17px] text-muted-foreground leading-relaxed mb-10 max-w-[480px]">
-            from intimate gatherings to grand celebrations, hydrowells elevates every occasion with water that's as refined as the moment itself.
+            from intimate gatherings to grand celebrations, i elevate every occasion with water that's as refined as the moment itself.
           </p>
 
           {/* Moment tags */}

@@ -46,7 +46,7 @@ const Merch = () => {
           movement.
         </h2>
         <p className="text-[17px] text-white/60 leading-relaxed max-w-[520px] mt-5">
-          rep hydrowells beyond the bottle. limited-edition apparel and accessories for those who live the lifestyle.
+          rep me beyond the bottle. limited-edition apparel and accessories for those who live the lifestyle.
         </p>
       </motion.div>
 
