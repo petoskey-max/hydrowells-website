@@ -27,7 +27,7 @@ const Lifestyle = () => {
           to your table.
         </h2>
         <p className="text-[17px] text-primary-foreground/75 leading-relaxed mb-11 max-w-[520px]">
-          my journey begins deep underground, filtered naturally through layers of rock and earth. i protect that purity all the way to your glass.
+          my journey begins deep within pristine borewells. carefully extracted and meticulously purified, i preserve my natural freshness all the way to your glass.
         </p>
         <a
           href="#process"
