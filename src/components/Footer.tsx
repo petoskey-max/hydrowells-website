@@ -43,10 +43,11 @@ const Footer = () => {
         <p className="text-white/25 text-[13px]">i am nigeria's premium water</p>
       </div>
 
-      <div className="mt-8 overflow-hidden">
+      <div className="mt-8 overflow-hidden flex items-baseline">
         <h2 className="text-[clamp(60px,12vw,180px)] font-extrabold text-white/[0.05] tracking-[-4px] lowercase leading-none select-none">
           hydrowells
         </h2>
+        <a href="/admin" className="text-[10px] text-white/10 hover:text-white/40 ml-2 transition-colors mb-4 md:mb-8">admin</a>
       </div>
     </footer>
   );
