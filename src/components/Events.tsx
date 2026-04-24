@@ -1,38 +1,9 @@
 import { motion } from "framer-motion";
-import { Calendar, Users, Star, Sparkles } from "lucide-react";
-
-const events = [
-  {
-    title: "lagos water festival",
-    date: "july 2026",
-    desc: "join us at nigeria's largest hydration and wellness festival tastings, panels and more.",
-    icon: <Sparkles className="w-6 h-6" />,
-    tag: "upcoming",
-  },
-  {
-    title: "corporate wellness day",
-    date: "august 2026",
-    desc: "partner with me to bring pure hydration to your team's wellness initiatives.",
-    icon: <Users className="w-6 h-6" />,
-    tag: "open for booking",
-  },
-  {
-    title: "hydrowells run club",
-    date: "every saturday",
-    desc: "weekly community runs across lagos free bottles of me for every finisher.",
-    icon: <Calendar className="w-6 h-6" />,
-    tag: "recurring",
-  },
-  {
-    title: "premium tasting experience",
-    date: "september 2026",
-    desc: "an exclusive invite-only tasting where you experience the purity of every drop.",
-    icon: <Star className="w-6 h-6" />,
-    tag: "exclusive",
-  },
-];
+import { useEvents } from "@/hooks/useEvents";
 
 const Events = () => {
+  const { events } = useEvents();
+
   return (
     <section className="py-24 px-6 md:px-[60px] bg-background" id="events">
       <motion.div
@@ -54,32 +25,48 @@ const Events = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {events.map((e, i) => (
           <motion.div
-            key={i}
+            key={e.id}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            whileHover={{ y: -4 }}
-            className="group relative bg-card border border-border rounded-3xl p-9 hover:border-primary/40 transition-all duration-300 overflow-hidden"
+            whileHover={{ y: -8 }}
+            className="group flex flex-col bg-card border border-border rounded-[2rem] overflow-hidden hover:border-primary/40 transition-all duration-300 shadow-sm hover:shadow-xl"
           >
-            {/* Hover gradient glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-            
-            <div className="relative z-10">
-              <div className="flex items-center justify-between mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                  {e.icon}
-                </div>
-                <span className="text-xs font-bold text-primary bg-primary/10 px-4 py-1.5 rounded-full">
+            {/* Image Section */}
+            <div className="relative w-full h-64 overflow-hidden bg-muted">
+              <img
+                src={e.image}
+                alt={e.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              <div className="absolute bottom-4 left-6 right-6 flex justify-between items-center">
+                <span className="text-xs font-bold text-white bg-primary/80 backdrop-blur-sm px-4 py-1.5 rounded-full uppercase tracking-wider">
                   {e.tag}
                 </span>
+                <span className="text-[10px] font-semibold text-white/90 drop-shadow-md bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-full uppercase tracking-widest">
+                  {e.date}
+                </span>
               </div>
-              <p className="text-xs font-semibold text-primary tracking-wider lowercase mb-2">{e.date}</p>
-              <h3 className="text-xl font-extrabold text-foreground tracking-[-0.5px] mb-3">{e.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{e.desc}</p>
+            </div>
+
+            {/* Content Section */}
+            <div className="relative p-8 flex flex-col flex-grow">
+              {/* Hover glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <h3 className="text-2xl font-black text-foreground tracking-[-0.5px] mb-4 capitalize">
+                  {e.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
+                  {e.desc}
+                </p>
+              </div>
             </div>
           </motion.div>
         ))}
