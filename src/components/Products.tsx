@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import heroBottle from "@/assets/hero-bottle.png";
 import { FadeInScope } from "./FadeInScope";
+import product750 from "@/assets/product-750ml.png";
+import product500 from "@/assets/product-500ml.png";
+import product350 from "@/assets/product-350ml.png";
 
 const products = [
   {
@@ -8,18 +10,21 @@ const products = [
     desc: "our flagship bottle crisp, clean and perfectly balanced for everyday hydration. the go to choice for homes, offices and events.",
     tag: "best seller",
     volume: "750ml",
+    image: product750,
   },
   {
     name: "hydrowells 500ml",
     desc: "the perfect on the go companion. fits in your bag, your car, your gym kit pure hydration wherever life takes you.",
     tag: "popular",
     volume: "500ml",
+    image: product500,
   },
   {
     name: "hydrowells 350ml",
     desc: "compact and elegant. perfect for meetings, events and intimate gatherings where every detail matters.",
     tag: "compact",
     volume: "350ml",
+    image: product350,
   },
 ];
 
@@ -53,7 +58,7 @@ const Products = () => {
           >
             <div className="h-[340px] flex items-center justify-center overflow-hidden relative bg-gradient-to-br from-primary/5 to-primary/10">
               <img
-                src={heroBottle}
+                src={p.image}
                 alt={p.name}
                 className="h-[280px] w-auto object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_15px_30px_rgba(0,91,237,0.15)]"
                 loading="lazy"
