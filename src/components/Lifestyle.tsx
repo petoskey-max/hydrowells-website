@@ -22,7 +22,7 @@ const Lifestyle = () => {
           sourced with care
         </p>
         <h2 className="text-[clamp(36px,4vw,64px)] font-extrabold leading-[1.05] tracking-[-2px] mb-5 text-primary-foreground">
-          from nature,
+          from borewells,
           <br />
           to your table.
         </h2>
