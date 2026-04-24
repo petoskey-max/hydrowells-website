@@ -19,6 +19,7 @@ import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import SocialFollow from "@/components/SocialFollow";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
@@ -45,6 +46,7 @@ const Index = () => {
       <Contact />
       <SocialFollow />
       <Footer />
+      <BackToTop />
     </div>
   );
 };
