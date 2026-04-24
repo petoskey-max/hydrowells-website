@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
 import { FadeInScope } from "./FadeInScope";
-import product750 from "@/assets/product-750ml.png";
-import product500 from "@/assets/product-500ml.png";
-import product350 from "@/assets/product-350ml.png";
 
 const products = [
   {
@@ -10,21 +7,21 @@ const products = [
     desc: "our flagship bottle crisp, clean and perfectly balanced for everyday hydration. the go to choice for homes, offices and events.",
     tag: "best seller",
     volume: "750ml",
-    image: product750,
+    image: "/product-images/product-750ml.png",
   },
   {
     name: "hydrowells 500ml",
     desc: "the perfect on the go companion. fits in your bag, your car, your gym kit pure hydration wherever life takes you.",
     tag: "popular",
     volume: "500ml",
-    image: product500,
+    image: "/product-images/product-500ml.png",
   },
   {
     name: "hydrowells 350ml",
     desc: "compact and elegant. perfect for meetings, events and intimate gatherings where every detail matters.",
     tag: "compact",
     volume: "350ml",
-    image: product350,
+    image: "/product-images/product-350ml.png",
   },
 ];
 
