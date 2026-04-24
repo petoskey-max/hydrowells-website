@@ -6,15 +6,7 @@
 
 body {
   overflow-x: hidden;
-}
-
-* {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-*::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  overflow-y: auto;
 }
 
 @layer base {
