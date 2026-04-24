@@ -6,7 +6,7 @@ const SocialFollow = () => {
     {
       name: "Instagram",
       icon: <InstagramLogo size={36} weight="duotone" />,
-      link: "#",
+      link: "https://www.instagram.com/hydrowellswater?igsh=MXFtcmJteGx1ZzhseQ==",
       delay: 0.1,
     },
     {
