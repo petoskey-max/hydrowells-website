@@ -48,7 +48,6 @@ const Footer = () => {
         <h2 className="text-[clamp(60px,12vw,180px)] font-extrabold text-white/[0.05] tracking-[-4px] lowercase leading-none select-none">
           hydrowells
         </h2>
-        <Link to="/admin" className="text-[10px] text-white/10 hover:text-white/40 ml-2 transition-colors mb-4 md:mb-8">admin</Link>
       </div>
     </footer>
   );

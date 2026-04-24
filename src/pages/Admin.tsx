@@ -6,9 +6,17 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowLeft, Trash2, Image as ImageIcon } from "lucide-react";
+import { ArrowLeft, Trash2, Image as ImageIcon, Lock } from "lucide-react";
 
 export default function Admin() {
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return sessionStorage.getItem("adminAuth") === "true";
+  });
+  
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
   const { events, addEvent, updateEvent, deleteEvent } = useEvents();
   const [editingId, setEditingId] = useState<string | null>(null);
 
@@ -18,6 +26,22 @@ export default function Admin() {
   const [desc, setDesc] = useState("");
   const [tag, setTag] = useState("");
   const [image, setImage] = useState("");
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (username === "Hydrowellswater" && password === "ilovehydrowells@$2026") {
+      sessionStorage.setItem("adminAuth", "true");
+      setIsAuthenticated(true);
+      setError("");
+    } else {
+      setError("Invalid username or password");
+    }
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("adminAuth");
+    setIsAuthenticated(false);
+  };
 
   const resetForm = () => {
     setTitle("");
@@ -70,6 +94,51 @@ export default function Admin() {
     }
   };
 
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-muted/40 flex items-center justify-center p-6 font-sans">
+        <Card className="w-full max-w-md shadow-xl border-border/50">
+          <CardHeader className="space-y-1 bg-muted/30 pb-8 text-center rounded-t-xl">
+            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+              <Lock className="w-6 h-6" />
+            </div>
+            <CardTitle className="text-2xl font-extrabold tracking-tight">Admin Login</CardTitle>
+            <CardDescription>Enter your credentials to access the portal</CardDescription>
+          </CardHeader>
+          <CardContent className="p-8">
+            <form onSubmit={handleLogin} className="space-y-5">
+              <div className="space-y-2">
+                <Label htmlFor="username">Username</Label>
+                <Input 
+                  id="username" 
+                  value={username} 
+                  onChange={(e) => setUsername(e.target.value)} 
+                  placeholder="Enter username" 
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="password">Password</Label>
+                <Input 
+                  id="password" 
+                  type="password" 
+                  value={password} 
+                  onChange={(e) => setPassword(e.target.value)} 
+                  placeholder="Enter password" 
+                />
+              </div>
+              
+              {error && <p className="text-sm font-semibold text-destructive mt-2">{error}</p>}
+              
+              <Button type="submit" className="w-full mt-4 bg-primary font-bold">
+                Sign In
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-muted/40 p-6 md:p-12 font-sans">
       <div className="max-w-4xl mx-auto space-y-8">
@@ -84,6 +153,9 @@ export default function Admin() {
               <p className="text-muted-foreground text-sm">Manage website events</p>
             </div>
           </div>
+          <Button variant="ghost" size="sm" onClick={handleLogout} className="text-muted-foreground hover:text-foreground">
+            Sign Out
+          </Button>
         </div>
 
         {/* Editor Form */}
