@@ -56,7 +56,7 @@ const Products = () => {
             initial={{ rotateX: 25, z: -100, opacity: 0 }}
             whileInView={{ rotateX: 0, z: 0, opacity: 1 }}
           >
-            <div className="h-[340px] flex items-center justify-center overflow-hidden relative p-8">
+            <div className="h-[340px] flex items-center justify-center overflow-hidden relative bg-gradient-to-br from-primary/5 to-primary/10 p-8">
               <img
                 src={p.image}
                 alt={p.name}
@@ -67,7 +67,7 @@ const Products = () => {
                 {p.volume}
               </span>
             </div>
-            <div className="p-7 bg-gradient-to-br from-primary/5 to-primary/10 border-t border-border">
+            <div className="p-7">
               <h3 className="text-[22px] font-extrabold tracking-[-0.5px] mb-2 text-foreground">
                 {p.name}
               </h3>
