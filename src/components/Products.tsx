@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FadeInScope } from "./FadeInScope";
+import { useState } from "react";
 
 const products = [
   {
@@ -57,7 +58,8 @@ const Products = () => {
               <img
                 src={p.image}
                 alt={p.name}
-                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_15px_30px_rgba(0,91,237,0.15)]"
+                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                decoding="async"
                 loading="lazy"
               />
               <span className="absolute bottom-5 right-5 bg-foreground/10 backdrop-blur-lg border border-foreground/20 text-foreground text-[13px] font-bold px-4 py-2 rounded-full">
