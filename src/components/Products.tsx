@@ -17,14 +17,14 @@ const products = [
     desc: "the perfect on-the-go companion. fits in your bag, your car, your gym kit — pure hydration wherever life takes you.",
     tag: "popular",
     volume: "500ml",
-    image: img500,
+    image: img350,
   },
   {
     name: "hydrowells 350ml",
     desc: "compact and elegant. perfect for meetings, events and intimate gatherings where every detail matters.",
     tag: "compact",
     volume: "350ml",
-    image: img350,
+    image: img500,
   },
 ];
 
