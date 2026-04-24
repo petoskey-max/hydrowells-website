@@ -1,5 +1,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import img750 from "@/assets/product-750ml.png";
+import img500 from "@/assets/product-500ml.png";
+import img350 from "@/assets/product-350ml.png";
 
 const products = [
   {
@@ -7,21 +10,21 @@ const products = [
     desc: "our flagship bottle — crisp, clean and perfectly balanced for everyday hydration. the go-to choice for homes, offices and events.",
     tag: "best seller",
     volume: "750ml",
-    image: "/product-images/product-750ml.png",
+    image: img750,
   },
   {
     name: "hydrowells 500ml",
     desc: "the perfect on-the-go companion. fits in your bag, your car, your gym kit — pure hydration wherever life takes you.",
     tag: "popular",
     volume: "500ml",
-    image: "/product-images/product-500ml.png",
+    image: img500,
   },
   {
     name: "hydrowells 350ml",
     desc: "compact and elegant. perfect for meetings, events and intimate gatherings where every detail matters.",
     tag: "compact",
     volume: "350ml",
-    image: "/product-images/product-350ml.png",
+    image: img350,
   },
 ];
 
