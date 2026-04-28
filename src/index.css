@@ -72,6 +72,11 @@ body {
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Hanken Grotesk', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 

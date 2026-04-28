@@ -65,7 +65,7 @@ const SocialFollow = () => {
                 type: "spring",
                 stiffness: 100,
               }}
-              className="group flex flex-col items-center gap-6"
+              className="group flex flex-col items-center gap-6 select-none"
             >
               <div className="relative">
                 {/* Glow effect on hover */}
