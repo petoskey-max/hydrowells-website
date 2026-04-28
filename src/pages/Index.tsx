@@ -32,11 +32,11 @@ const Index = () => {
       <MyStory />
       <BrandStrip />
       <Values />
+      <Campaign />
       <Products />
+      <Process />
       <Lifestyle />
       <PreciousMoments />
-      <Campaign />
-      <Process />
       <Eco />
       <Testimonials />
       <Events />
