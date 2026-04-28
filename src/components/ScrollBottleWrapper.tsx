@@ -29,19 +29,14 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
   // Calculate 3D-like float transforms
   // Optimized for 2 sections: Hero (0-0.5) and TheBottle (0.5-1.0)
   // Reaches final size early in Hero (0.35) and stays consistent through arrival and plateau (0.5-1.0)
+  // Reversed tilt: now tilts left (-12, -25) during move, then straightens at 0.5
   const scale = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [1.7, 2.1, 2.1, 2.1]);
-  const rotateZ = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [0, 10, 0, 0]);
-  const rotateY = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [0, 25, 0, 0]);
+  const rotateZ = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [0, -12, 0, 0]);
+  const rotateY = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [0, -25, 0, 0]);
   const yFloat = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [35, -15, 0, 0]);
   
-  // Mobile-only fade effect: visible in Hero, fades out for Values, back in for The Bottle
-  const mobileOpacity = useTransform(
-    scrollYProgress, 
-    [0, 0.25, 0.35, 0.65, 0.75, 1], 
-    [1, 1, 0, 0, 1, 1]
-  );
-  
-  const opacity = isMobile ? mobileOpacity : 1;
+  // Opacity: Always visible throughout Hero and TheBottle (no mobile fade-out)
+  const opacity = 1;
 
   return (
     <div ref={containerRef} className="relative">
