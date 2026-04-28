@@ -65,13 +65,14 @@ const SocialFollow = () => {
                 type: "spring",
                 stiffness: 100,
               }}
-              className="group flex flex-col items-center gap-6 select-none"
+              className="group flex flex-col items-center gap-6 select-none outline-none focus:outline-none focus:ring-0 active:bg-transparent"
+              style={{ WebkitTapHighlightColor: "transparent" }}
             >
               <div className="relative">
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-primary/40 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Glow effect on hover - Desktop only to prevent mobile glitch */}
+                <div className="absolute inset-0 bg-primary/40 rounded-3xl blur-2xl opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:border-primary/50 group-hover:bg-white/10 group-hover:scale-105 shadow-2xl">
+                <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-white/10 md:bg-white/5 md:backdrop-blur-xl border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:border-primary/50 group-hover:bg-white/10 group-hover:scale-105 shadow-2xl">
                   <div className="text-primary transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(0,91,237,0.8)]">
                     {social.icon}
                   </div>
