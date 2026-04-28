@@ -29,7 +29,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
   // Calculate 3D-like float transforms
   // Optimized for 2 sections: Hero (0-0.5) and TheBottle (0.5-1.0)
   // Reaches final size early in Hero (0.35) and stays consistent through arrival and plateau (0.5-1.0)
-  const scale = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [1.9, 2.4, 2.4, 2.4]);
+  const scale = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [1.7, 2.1, 2.1, 2.1]);
   const rotateZ = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [0, 10, 0, 0]);
   const rotateY = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [0, 25, 0, 0]);
   const yFloat = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [35, -15, 0, 0]);
@@ -63,7 +63,7 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
               <motion.img 
                 src={heroBottle}
                 alt="Hydrowells Floating Bottle"
-                className="w-full h-auto max-h-[92vh] md:max-h-[85vh] object-contain drop-shadow-[0_40px_80px_rgba(0,91,237,0.3)] will-change-transform"
+                className="w-full h-auto max-h-[85vh] md:max-h-[75vh] object-contain drop-shadow-[0_40px_80px_rgba(0,91,237,0.3)] will-change-transform"
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
