@@ -81,7 +81,7 @@ const Hero = ({ hideBottle = false }: { hideBottle?: boolean }) => {
             href="#about"
             className="border border-border text-foreground px-6 py-4 rounded-full text-[15px] font-medium hover:border-primary transition-colors whitespace-nowrap w-fit"
           >
-            our story
+            my story
           </a>
         </div>
       </FadeInScope>

@@ -35,7 +35,7 @@ const Navbar = () => {
   }, []);
 
   const links = [
-    { href: "#about", label: "our story" },
+    { href: "#about", label: "my story" },
     { href: "#products", label: "products" },
     { href: "#process", label: "process", subLinks: [{ href: "#recycling", label: "recycling journey" }] },
     { href: "#reviews", label: "reviews" },
