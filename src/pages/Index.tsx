@@ -5,7 +5,6 @@ import TheBottle from "@/components/TheBottle";
 import ScrollBottleWrapper from "@/components/ScrollBottleWrapper";
 import BrandStrip from "@/components/BrandStrip";
 import Values from "@/components/Values";
-import WeekendLifestyle from "@/components/WeekendLifestyle";
 import Products from "@/components/Products";
 import Lifestyle from "@/components/Lifestyle";
 import PreciousMoments from "@/components/PreciousMoments";
