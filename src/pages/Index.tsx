@@ -29,10 +29,10 @@ const Index = () => {
       <ScrollBottleWrapper>
         <Hero hideBottle />
         <TheBottle hideBottle />
-        <MyStory />
-        <BrandStrip />
-        <Values />
       </ScrollBottleWrapper>
+      <MyStory />
+      <BrandStrip />
+      <Values />
       <WeekendLifestyle />
       <Products />
       <Lifestyle />
