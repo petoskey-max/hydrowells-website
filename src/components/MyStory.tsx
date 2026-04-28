@@ -27,7 +27,7 @@ const MyStory = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-semibold text-primary tracking-[3px] uppercase mb-4"
+            className="text-xs font-semibold text-primary tracking-[3px] lowercase mb-4"
           >
             the narrative
           </motion.p>
