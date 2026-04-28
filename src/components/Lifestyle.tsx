@@ -29,12 +29,7 @@ const Lifestyle = () => {
         <p className="text-[17px] text-primary-foreground/75 leading-relaxed mb-11 max-w-[520px]">
           my journey begins deep within pristine borewells. carefully extracted and meticulously purified, i preserve my natural freshness all the way to your glass.
         </p>
-        <a
-          href="#process"
-          className="bg-background text-foreground px-9 py-4 rounded-full text-[15px] font-bold w-fit hover:-translate-y-0.5 hover:shadow-xl transition-all"
-        >
-          see our process
-        </a>
+
       </motion.div>
     </section>
   );

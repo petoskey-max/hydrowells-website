@@ -28,10 +28,10 @@ const Campaign = () => {
           nafdac approved. iso certified. every drop meets the highest international safety and quality standards.
         </p>
         <a
-          href="#about"
+          href="#process"
           className="bg-background text-foreground px-9 py-4 rounded-full text-[15px] font-bold hover:-translate-y-0.5 hover:shadow-xl transition-all"
         >
-          learn more
+          see our process
         </a>
       </motion.div>
     </section>
