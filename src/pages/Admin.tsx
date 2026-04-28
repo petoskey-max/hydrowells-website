@@ -17,8 +17,9 @@ export default function Admin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const { events, addEvent, updateEvent, deleteEvent } = useEvents();
+  const { events, isLoading, error: dbError, addEvent, updateEvent, deleteEvent } = useEvents();
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
 
   // Form State
   const [title, setTitle] = useState("");
@@ -62,17 +63,18 @@ export default function Admin() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!title || !date || !desc || !tag) {
       alert("Please fill all text fields");
       return;
     }
 
+    setIsSaving(true);
+    let result;
     if (editingId) {
-      updateEvent(editingId, { title, date, desc, tag, image });
+      result = await updateEvent(editingId, { title, date, desc, tag, image });
     } else {
-      addEvent({
-        id: "evt_" + Date.now().toString(),
+      result = await addEvent({
         title,
         date,
         desc,
@@ -80,7 +82,13 @@ export default function Admin() {
         image: image || "https://images.unsplash.com/photo-1543822709-0d50711db185?w=800&q=80"
       });
     }
-    resetForm();
+    
+    setIsSaving(false);
+    if (result.error) {
+      alert("Error saving: " + result.error);
+    } else {
+      resetForm();
+    }
   };
 
   const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -200,8 +208,8 @@ export default function Admin() {
               {editingId && (
                 <Button variant="ghost" onClick={resetForm}>Cancel</Button>
               )}
-              <Button onClick={handleSave} className="font-semibold px-8 py-2 bg-primary text-primary-foreground rounded-md shadow-sm hover:bg-primary/90 transition-colors">
-                {editingId ? "Save Changes" : "Publish Event"}
+              <Button onClick={handleSave} disabled={isSaving} className="font-semibold px-8 py-2 bg-primary text-primary-foreground rounded-md shadow-sm hover:bg-primary/90 transition-colors">
+                {isSaving ? "Saving..." : (editingId ? "Save Changes" : "Publish Event")}
               </Button>
             </div>
           </CardContent>
@@ -212,7 +220,18 @@ export default function Admin() {
           <h2 className="text-xl font-bold tracking-tight">Current Events ({events.length})</h2>
           
           <div className="grid gap-4">
-            {events.map((e) => (
+            {isLoading ? (
+              <div className="text-center py-12">
+                <div className="animate-spin w-8 h-8 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
+                <p className="text-muted-foreground italic">Fetching events from database...</p>
+              </div>
+            ) : dbError ? (
+              <div className="text-center py-12 text-destructive border-2 border-dashed rounded-xl border-destructive/20 bg-destructive/5">
+                <p className="font-bold">Database Error</p>
+                <p className="text-xs mt-1">{dbError}</p>
+                <Button variant="outline" size="sm" className="mt-4" onClick={() => window.location.reload()}>Retry</Button>
+              </div>
+            ) : events.map((e) => (
               <Card key={e.id} className="overflow-hidden transition-all hover:shadow-md border-border/60">
                 <div className="flex flex-col md:flex-row">
                   {/* Thumbnail */}
@@ -238,7 +257,12 @@ export default function Admin() {
                       </div>
                       <div className="flex gap-2">
                         <Button variant="outline" size="sm" onClick={() => editEvent(e)}>Edit</Button>
-                        <Button variant="destructive" size="sm" onClick={() => deleteEvent(e.id)}>
+                        <Button variant="destructive" size="sm" onClick={async () => {
+                          if (confirm("Delete this event?")) {
+                            const res = await deleteEvent(e.id);
+                            if (res.error) alert("Error deleting: " + res.error);
+                          }
+                        }}>
                           <Trash2 className="w-4 h-4" />
                         </Button>
                       </div>
@@ -249,7 +273,7 @@ export default function Admin() {
               </Card>
             ))}
             
-            {events.length === 0 && (
+            {!isLoading && !dbError && events.length === 0 && (
               <div className="text-center py-12 text-muted-foreground border-2 border-dashed rounded-xl border-border/60 bg-muted/20">
                 <p>No events found. Create one above to get started.</p>
               </div>

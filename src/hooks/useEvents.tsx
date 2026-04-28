@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 
 export interface EventItem {
   id: string;
@@ -7,71 +8,83 @@ export interface EventItem {
   desc: string;
   tag: string;
   image: string;
+  created_at?: string;
 }
 
-const defaultEvents: EventItem[] = [
-  {
-    id: "evt_1",
-    title: "lagos water festival",
-    date: "july 2026",
-    desc: "join us at nigeria's largest hydration and wellness festival tastings, panels and more.",
-    tag: "upcoming",
-    image: "https://images.unsplash.com/photo-1543822709-0d50711db185?w=800&q=80"
-  },
-  {
-    id: "evt_2",
-    title: "corporate wellness day",
-    date: "august 2026",
-    desc: "partner with me to bring pure hydration to your team's wellness initiatives.",
-    tag: "open for booking",
-    image: "https://images.unsplash.com/photo-1546069901-ba949f87265c?w=800&q=80"
-  },
-  {
-    id: "evt_3",
-    title: "hydrowells run club",
-    date: "every saturday",
-    desc: "weekly community runs across lagos free bottles of me for every finisher.",
-    tag: "recurring",
-    image: "https://images.unsplash.com/photo-1552674605-171d31d4513d?w=800&q=80"
-  },
-  {
-    id: "evt_4",
-    title: "premium tasting experience",
-    date: "september 2026",
-    desc: "an exclusive invite-only tasting where you experience the purity of every drop.",
-    tag: "exclusive",
-    image: "https://images.unsplash.com/photo-1560067174-c5a3a8f37060?w=800&q=80"
-  },
-];
-
 export function useEvents() {
-  const [events, setEvents] = useState<EventItem[]>(() => {
-    const saved = localStorage.getItem('hydrowells_events');
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch (e) {
-        console.error("Failed to parse events from local storage", e);
-      }
+  const [events, setEvents] = useState<EventItem[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchEvents = async () => {
+    try {
+      setIsLoading(true);
+      const { data, error } = await supabase
+        .from('events')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      setEvents(data || []);
+    } catch (err: any) {
+      console.error('Error fetching events:', err.message);
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
     }
-    return defaultEvents;
-  });
+  };
 
   useEffect(() => {
-    localStorage.setItem('hydrowells_events', JSON.stringify(events));
-  }, [events]);
+    fetchEvents();
+  }, []);
 
-  const addEvent = (event: EventItem) => {
-    setEvents(prev => [...prev, event]);
+  const addEvent = async (event: Omit<EventItem, 'id' | 'created_at'>) => {
+    try {
+      const { data, error } = await supabase
+        .from('events')
+        .insert([event])
+        .select();
+
+      if (error) throw error;
+      if (data) setEvents(prev => [data[0], ...prev]);
+      return { data, error: null };
+    } catch (err: any) {
+      return { data: null, error: err.message };
+    }
   };
 
-  const updateEvent = (id: string, updated: Partial<EventItem>) => {
-    setEvents(prev => prev.map(e => e.id === id ? { ...e, ...updated } : e));
+  const updateEvent = async (id: string, updated: Partial<EventItem>) => {
+    try {
+      const { data, error } = await supabase
+        .from('events')
+        .update(updated)
+        .eq('id', id)
+        .select();
+
+      if (error) throw error;
+      if (data) {
+        setEvents(prev => prev.map(e => e.id === id ? { ...e, ...data[0] } : e));
+      }
+      return { data, error: null };
+    } catch (err: any) {
+      return { data: null, error: err.message };
+    }
   };
 
-  const deleteEvent = (id: string) => {
-    setEvents(prev => prev.filter(e => e.id !== id));
+  const deleteEvent = async (id: string) => {
+    try {
+      const { error } = await supabase
+        .from('events')
+        .delete()
+        .eq('id', id);
+
+      if (error) throw error;
+      setEvents(prev => prev.filter(e => e.id !== id));
+      return { error: null };
+    } catch (err: any) {
+      return { error: err.message };
+    }
   };
 
-  return { events, addEvent, updateEvent, deleteEvent };
+  return { events, isLoading, error, fetchEvents, addEvent, updateEvent, deleteEvent };
 }
