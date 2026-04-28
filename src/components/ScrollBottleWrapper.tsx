@@ -33,7 +33,11 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
   const scale = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [1.7, 2.1, 2.1, 2.1]);
   const rotateZ = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [0, -12, 0, 0]);
   const rotateY = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [0, -25, 0, 0]);
-  const yFloat = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [35, -15, 0, 0]);
+  
+  // Vertical position: parks at 0 on desktop, but +50 on mobile for better centering
+  const yDesktop = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [35, -15, 0, 0]);
+  const yMobile = useTransform(scrollYProgress, [0, 0.35, 0.5, 1], [35, -15, 50, 50]);
+  const yFloat = isMobile ? yMobile : yDesktop;
   
   // Opacity: Always visible throughout Hero and TheBottle (no mobile fade-out)
   const opacity = 1;
