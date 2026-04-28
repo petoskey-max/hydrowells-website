@@ -33,7 +33,6 @@ const Index = () => {
       <MyStory />
       <BrandStrip />
       <Values />
-      <WeekendLifestyle />
       <Products />
       <Lifestyle />
       <PreciousMoments />
