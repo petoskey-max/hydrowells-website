@@ -27,11 +27,12 @@ export const ScrollBottleWrapper = ({ children }: { children: React.ReactNode })
   });
 
   // Calculate 3D-like float transforms
-  // As it scrolls between sections, it pops out, rotates, and stabilizes
-  const scale = useTransform(scrollYProgress, [0, 0.4, 0.5, 0.7, 1], [1.9, 2.15, 2.3, 2.15, 1.9]);
-  const rotateZ = useTransform(scrollYProgress, [0, 0.4, 0.5, 0.7, 1], [0, 12, 18, 12, 0]);
-  const rotateY = useTransform(scrollYProgress, [0, 0.4, 0.5, 0.7, 1], [0, 30, 45, 30, 0]);
-  const yFloat = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [35, -20, 100, -100, 40]);
+  // Modified to stabilize (plateau) during the second section (TheBottle)
+  // Approx ranges: 0-0.2 (Hero), 0.25-0.45 (TheBottle), 0.5-0.75 (MyStory), 0.8-1.0 (Values)
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.3, 0.45, 0.6, 0.8, 1], [1.9, 2.15, 2.4, 2.4, 2.2, 2.1, 1.9]);
+  const rotateZ = useTransform(scrollYProgress, [0, 0.2, 0.3, 0.45, 0.6, 0.8, 1], [0, 12, 0, 0, 15, 10, 0]);
+  const rotateY = useTransform(scrollYProgress, [0, 0.2, 0.3, 0.45, 0.6, 0.8, 1], [0, 30, 0, 0, 45, 30, 0]);
+  const yFloat = useTransform(scrollYProgress, [0, 0.2, 0.3, 0.45, 0.6, 0.8, 1], [35, -20, 0, 0, 100, -50, 40]);
   
   // Mobile-only fade effect: visible in Hero, fades out for Values, back in for The Bottle
   const mobileOpacity = useTransform(
