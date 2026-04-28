@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import MyStory from "@/components/MyStory";
 import TheBottle from "@/components/TheBottle";
 import ScrollBottleWrapper from "@/components/ScrollBottleWrapper";
 import BrandStrip from "@/components/BrandStrip";
@@ -27,6 +28,7 @@ const Index = () => {
       <Navbar />
       <ScrollBottleWrapper>
         <Hero hideBottle />
+        <MyStory />
         <BrandStrip />
         <Values />
         <TheBottle hideBottle />
